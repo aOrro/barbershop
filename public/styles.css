@@ -1,1 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.showcase {
+  height: 70vh;
+  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/showcase-background.jpg);
+  background-size: cover;
+}
+
+.showcase .nav-bar {
+  height: 5rem;
+  background-color: #03626b;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.showcase .nav-bar .nav-logo-box {  /*CHECK WHEN UPLOADING LOGO*/
+  height: 4rem;
+  width: 15rem;
+  background-color: #000;
+  margin: .5rem;
+}
+
+.showcase .nav-bar .nav-links {
+  display: flex;
+  align-items: flex-end;
+}
+
+.showcase .nav-bar .nav-links li {
+  margin: 0 2rem .5rem 2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+.showcase .nav-bar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.showcase .nav-bar .nav-social {
+  margin: 0 1.5rem .5rem 1.5rem;
+}
+
+.showcase .nav-bar .nav-social a {
+  margin: 0 .5rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.showcase .showcase-text {
+  margin: 10rem;
+}
+
+.showcase .showcase-text h1 {
+  font-size: 6rem;
+  border-left: .2rem solid #fff;
+  padding-left: 1rem;
+  color: #fff;
+}
+
+.showcase .showcase-text .booking-btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 2.5rem 0 0 1.5rem;
+  padding: 1rem 1.5rem;
+  display: inline-block;
+  border-radius: .5rem;
+  background-color: #03626b;
+  color: #fff;
+}
