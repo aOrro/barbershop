@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Noir';
+    src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
+         url('./font-noir/noir_regular-webfont.woff') format('woff');
+    font-weight: normal bold;
+    font-style: normal;
+
+}
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -10,12 +22,15 @@ html {
 
 body {
   font-size: 1.6rem;
+  font-family: 'Noir';
+  background-color: #d5d5d5;
 }
 
 .showcase {
-  height: 70vh;
-  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/showcase-background.jpg);
+  height: 80vh;
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/showcase-background.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .showcase .nav-bar {
@@ -42,11 +57,12 @@ body {
   margin: 0 2rem .5rem 2rem;
   text-transform: uppercase;
   font-size: 1.2rem;
+  letter-spacing: .2rem;
   list-style: none;
 }
 
 .showcase .nav-bar .nav-links a {
-  color: #fff;
+  color: #d1d1d1;
   text-decoration: none;
 }
 
@@ -57,27 +73,229 @@ body {
 .showcase .nav-bar .nav-social a {
   margin: 0 .5rem;
   text-decoration: none;
-  color: #fff;
+  color: #d1d1d1;
 }
 
 .showcase .showcase-text {
-  margin: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  text-transform: uppercase;
 }
 
 .showcase .showcase-text h1 {
   font-size: 6rem;
-  border-left: .2rem solid #fff;
+  border-left: .2rem solid #d1d1d1;
   padding-left: 1rem;
-  color: #fff;
+  color: #d1d1d1;
 }
 
 .showcase .showcase-text .booking-btn {
   text-transform: uppercase;
+  text-align: center;
   text-decoration: none;
-  margin: 2.5rem 0 0 1.5rem;
-  padding: 1rem 1.5rem;
+  font-size: 1.8rem;
+  margin: 2.5rem 0 0 0rem;
+  padding: 1.5rem 2rem;
   display: inline-block;
   border-radius: .5rem;
   background-color: #03626b;
-  color: #fff;
+  color: #d1d1d1;
+}
+
+.about-section {
+  height: 60rem;
+}
+
+.about-section .about-images {
+  width: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.about-section .about-images .about-img {
+  width: 45%;
+  position: absolute;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+  border-radius: .3rem;
+  border: .5rem solid #03626b;
+}
+
+.about-section .about-images .about-img-1 {
+  top: 15rem;
+  left: 5rem;
+}
+
+.about-section .about-images .about-img-2 {
+  top:5rem;
+  left: 20rem;
+}
+
+.about-section .about-images .about-img-3 {
+  top: 20rem;
+  left: 28rem;
+}
+
+.about-section .about-text {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+.about-section .about-text h2 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  height: 45%;
+  width: 80%;
+  display: flex;
+  align-items: flex-end;
+  /*border-bottom: .5rem solid #03626b;*/
+}
+
+.about-section .about-text p {
+  height: 55%;
+  width: 95%;
+  padding-top: 5rem;
+}
+
+.services-section {
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/general2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #d1d1d1;
+  height: 105rem;
+}
+
+.services-section h2 {
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.services-section .services-icons {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  margin: 7rem auto;
+}
+
+.services-section .services-icons .icon-single {
+  width: 20%;
+  text-align: center;
+}
+
+.services-section .services-icons .icon-single img {
+  display: block;
+  width: 70%;
+  padding: 1rem;
+  border: .5rem solid #03626b;
+  border-radius: 10rem;
+  margin: 2rem auto;
+}
+
+.services-section .services-pricing {
+  width: 35%;
+  margin: 10rem auto;
+  padding: 2rem 1rem;
+  border: .5rem solid #03626b;
+  border-radius: .5rem;
+  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) );
+}
+
+.services-section .services-pricing h3 {
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+}
+
+.services-section .services-pricing .price-line {
+  width: 100%;
+  display: inline-block;
+  height: 5rem;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+
+.services-section .services-pricing .price-line .name {
+
+}
+
+.services-section .services-pricing .price-line .price {
+  float: right;
+}
+
+.social-section {
+}
+
+.social-section .social-reviews {
+  width: 70%;
+  margin: 15rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+  display: flex;
+  align-items: center;
+  background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/reviews-back.jpg);
+}
+
+.social-section .social-reviews img {
+  width: 18rem;
+  border-radius: 10rem;
+  border: .5rem solid #03626b;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+}
+
+.social-section .social-reviews .social-quote {
+  display: flex;
+  align-items: center;
+}
+
+.social-section .social-reviews .social-quote .quote-marks {
+  font-size: 30rem;
+  color: #03626b;
+}
+
+.social-section .social-reviews .social-quote p {
+  font-size: 3rem;
+}
+
+.social-section .social-ig {
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/social-back.jpg);
+  background-position: cover;
+  background-attachment: fixed;
+  height: 45rem;
+}
+
+.social-section .social-ig a {
+  text-decoration: none;
+  color: #000;
+}
+
+.social-section .social-ig h2 {
+  text-align: center;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: #d1d1d1;
+  padding: 6rem;
+}
+
+
+.social-section .social-ig .social-ig-images {
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-section .social-ig .social-ig-images .ig-img img {
+  width: 22rem;
+  border: .5rem solid #03626b;
+  border-radius: .5rem;
+}
+
+footer {
+  height: 40rem;
 }
