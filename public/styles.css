@@ -1,12 +1,13 @@
+@import "colors.css";
+
+
 @font-face {
     font-family: 'Noir';
     src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
          url('./font-noir/noir_regular-webfont.woff') format('woff');
     font-weight: normal bold;
     font-style: normal;
-
 }
-
 
 
 
@@ -23,7 +24,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: 'Noir';
-  background-color: #d5d5d5;
+  background-color: var(--grey);
 }
 
 .showcase {
@@ -31,14 +32,20 @@ body {
   background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/showcase-background.jpg);
   background-size: cover;
   background-attachment: fixed;
+  margin-top: 5rem;
 }
 
 .showcase .nav-bar {
+  width: 100%;
   height: 5rem;
-  background-color: #03626b;
+  background-color: var(--branding);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: fixed;
+  z-index: 99;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+  top: 0;
 }
 
 .showcase .nav-bar .nav-logo-box {  /*CHECK WHEN UPLOADING LOGO*/
@@ -56,24 +63,29 @@ body {
 .showcase .nav-bar .nav-links li {
   margin: 0 2rem .5rem 2rem;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: .2rem;
   list-style: none;
 }
 
 .showcase .nav-bar .nav-links a {
-  color: #d1d1d1;
+  color: var(--grey);
   text-decoration: none;
 }
 
 .showcase .nav-bar .nav-social {
-  margin: 0 1.5rem .5rem 1.5rem;
+  margin: 0 2rem .5rem 2rem;
 }
 
 .showcase .nav-bar .nav-social a {
   margin: 0 .5rem;
   text-decoration: none;
   color: #d1d1d1;
+  font-size: 1.8rem;
+}
+
+.showcase .nav-bar .nav-social a:first-child {
+  margin-left: 3rem;
 }
 
 .showcase .showcase-text {
@@ -81,7 +93,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   height: 100%;
   text-transform: uppercase;
 }
@@ -181,6 +193,10 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 7rem auto;
+  padding: 2rem;
+  border: .5rem solid #03626b;
+  border-radius: .5rem;
+  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
 }
 
 .services-section .services-icons .icon-single {
@@ -203,7 +219,7 @@ body {
   padding: 2rem 1rem;
   border: .5rem solid #03626b;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) );
+  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
 }
 
 .services-section .services-pricing h3 {
@@ -218,6 +234,7 @@ body {
   display: inline-block;
   height: 5rem;
   margin: 0 auto;
+  padding: 0 2rem;
   font-size: 2rem;
 }
 
@@ -298,4 +315,95 @@ body {
 
 footer {
   height: 40rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  width: 70%;
+  margin: 10rem auto;
+}
+
+.info .map {
+  width: 50%;
+  height: 40rem;
+  background-color: #000;
+  margin: 5rem;
+}
+
+.info .info-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info .info-text .contact {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.info .info-text .contact h3 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #03626b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.dash-detail {
+  width: 5rem;
+  height: .2rem;
+  background-color: #03626b;
+  margin: 0 auto;
+}
+
+.info .info-text .contact .contact-number {
+  margin-top: 5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.info .info-text .contact .footnote {
+  padding-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.info .info-text .opening-hours {
+  height: 50%;
+}
+
+.info .info-text .opening-hours h3 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #03626b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.info .info-text .opening-hours .timetable {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 5rem auto;
+}
+
+footer .copy {
+  background-color: #000;
+  height: 10rem;
+}
+
+footer .copy .copy-social {
+  text-align: center;
+}
+
+footer .copy .copy-social a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: #03626b;
 }

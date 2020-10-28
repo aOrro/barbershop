@@ -1,0 +1,68 @@
+@import "variables.css";
+
+@font-face {
+    font-family: 'Noir';
+    src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
+         url('./font-noir/noir_regular-webfont.woff') format('woff');
+    font-weight: normal bold;
+    font-style: normal;
+}
+
+
+
+html {
+  font-size: calc(1.25 * var(--unit));
+}
+
+body {
+  font-size: calc(2 * var(--unit));
+  font-family: 'Noir';
+}
+
+.title {
+  font-size: calc(7 * var(--unit));
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: calc(6 * var(--unit));
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: calc(5 * var(--unit));
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.regular {
+  font-size: calc(2 * var(--unit));
+}
+
+.big {
+  font-size: calc(4 * var(--unit));
+}
+
+.center {
+  text-align: center;
+}
+
+.text-li /*nav-li*/ {
+  text-transform: uppercase;
+  font-size: calc(1.5 * var(--unit));
+  letter-spacing: calc(.25 * var(--unit));
+  list-style: none;
+}
+
+.no-deco /*nav-a*/ {
+  text-decoration: none;
+}
+
+.social-links /*nav-social a*/ {
+  text-decoration: none;
+  font-size: calc(2.25 * var(--unit));
+}
+
+.quote {
+  font-size: calc(4 * var(--unit));
+}

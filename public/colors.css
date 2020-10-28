@@ -1,0 +1,15 @@
+
+:root {
+  --branding: #03626b;
+  --grey: #d1d1d1;
+  --unit: 8px;
+}
+
+
+.clr-primary {
+  color: var(--branding);
+}
+
+.clr-secondary {
+  color: var(--grey);
+}
