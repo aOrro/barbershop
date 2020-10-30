@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.sp-links {
+  margin: 0 2rem .5rem 2rem;
+}
+
+.sp-social-box {
+  margin: 0 2rem .5rem 2rem;
+}
+
+.sp-soc-a {
+  margin: 0 .5rem;
+}

@@ -47,7 +47,7 @@ body {
   text-align: center;
 }
 
-.text-li /*nav-li*/ {
+.txt-li /*nav-li*/ {
   text-transform: uppercase;
   font-size: calc(1.5 * var(--unit));
   letter-spacing: calc(.25 * var(--unit));
