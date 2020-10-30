@@ -4,9 +4,7 @@
          url('./font-noir/noir_regular-webfont.woff') format('woff');
     font-weight: normal bold;
     font-style: normal;
-
 }
-
 
 
 
@@ -23,22 +21,37 @@ html {
 body {
   font-size: 1.6rem;
   font-family: 'Noir';
-  background-color: #d5d5d5;
+  background-color: var(--grey);
 }
 
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+
 .showcase {
-  height: 80vh;
+  height: 120vh;
   background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/showcase-background.jpg);
   background-size: cover;
   background-attachment: fixed;
+  /*clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);*/
 }
 
 .showcase .nav-bar {
+  width: 100%;
   height: 5rem;
-  background-color: #03626b;
+  background-color: var(--branding);
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: fixed;
+  z-index: 99;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+  top: 0;
 }
 
 .showcase .nav-bar .nav-logo-box {  /*CHECK WHEN UPLOADING LOGO*/
@@ -56,24 +69,25 @@ body {
 .showcase .nav-bar .nav-links li {
   margin: 0 2rem .5rem 2rem;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   letter-spacing: .2rem;
   list-style: none;
 }
 
 .showcase .nav-bar .nav-links a {
-  color: #d1d1d1;
+  color: var(--grey);
   text-decoration: none;
 }
 
 .showcase .nav-bar .nav-social {
-  margin: 0 1.5rem .5rem 1.5rem;
+  margin: 0 2rem .5rem 2rem;
 }
 
 .showcase .nav-bar .nav-social a {
   margin: 0 .5rem;
   text-decoration: none;
   color: #d1d1d1;
+  font-size: 1.8rem;
 }
 
 .showcase .showcase-text {
@@ -81,7 +95,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
   height: 100%;
   text-transform: uppercase;
 }
@@ -97,8 +111,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  font-size: 1.8rem;
-  margin: 2.5rem 0 0 0rem;
+  font-size: 2rem;
+  letter-spacing: .1rem;
+  margin: 5rem;
   padding: 1.5rem 2rem;
   display: inline-block;
   border-radius: .5rem;
@@ -107,42 +122,77 @@ body {
 }
 
 .about-section {
-  height: 60rem;
+  height: 50rem;
+  transform: skewY(-5deg);
+  position: relative;
+  z-index: 0;
+  background-color: #d1d1d1;
+  margin-top: -10rem;
 }
 
-.about-section .about-images {
+.about-content {
+  transform: skewY(5deg);
+}
+
+.about-images {
   width: 50%;
   display: inline-block;
   position: relative;
+  z-index: 80;
 }
 
-.about-section .about-images .about-img {
-  width: 45%;
+.about-images:hover .about-img:not(:hover) {
+  transform: scale(.95);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, .2);
+}
+
+.about-img {
+  width: 55%;
   position: absolute;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
   border-radius: .3rem;
   border: .5rem solid #03626b;
+  transition: all .3s;
 }
 
-.about-section .about-images .about-img-1 {
-  top: 15rem;
+.about-images .about-img-1 {
+  top: 0rem;
+  left: 15rem;
+}
+
+.about-img-1:hover {
+  z-index: 90;
+  transform: scale(1.05) translateY(-.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+}
+
+.about-img-2:hover {
+  z-index: 90;
+  transform: scale(1.05) translateY(-.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+}
+
+.about-img-3:hover {
+  z-index: 90;
+  transform: scale(1.05) translateY(-.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+}
+
+.about-images .about-img-2 {
+  top: 13rem;
   left: 5rem;
 }
 
-.about-section .about-images .about-img-2 {
-  top:5rem;
-  left: 20rem;
-}
-
-.about-section .about-images .about-img-3 {
-  top: 20rem;
-  left: 28rem;
+.about-images .about-img-3 {
+  top: 19rem;
+  left: 25rem;
 }
 
 .about-section .about-text {
   width: 50%;
   height: 100%;
   float: right;
+  padding-top: 12rem;
 }
 
 .about-section .about-text h2 {
@@ -166,14 +216,18 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: #d1d1d1;
-  height: 105rem;
+  height: 130rem;
+  padding: 6rem;
+  margin-top: -10rem;
+  /*clip-path: polygon(0 25vh, 100% 0, 100% 100%, 0 100%);
+  margin-top: -25vh;*/
 }
 
 .services-section h2 {
   font-size: 5rem;
   text-transform: uppercase;
   text-align: center;
-  padding-top: 6rem;
+  margin-top: 20rem;
 }
 
 .services-section .services-icons {
@@ -181,11 +235,15 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 7rem auto;
+  padding: 2rem;
+  border: .5rem solid #03626b;
+  border-radius: .5rem;
+  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
 }
 
 .services-section .services-icons .icon-single {
   width: 20%;
-  text-align: center;
+  text-align: left;
 }
 
 .services-section .services-icons .icon-single img {
@@ -203,7 +261,7 @@ body {
   padding: 2rem 1rem;
   border: .5rem solid #03626b;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) );
+  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
 }
 
 .services-section .services-pricing h3 {
@@ -218,6 +276,7 @@ body {
   display: inline-block;
   height: 5rem;
   margin: 0 auto;
+  padding: 0 2rem;
   font-size: 2rem;
 }
 
@@ -229,11 +288,20 @@ body {
   float: right;
 }
 
+.drawing1 {
+  transform: scale(.3);
+  position: relative;
+  top: -56rem;
+  right: 45rem;
+}
+
 .social-section {
+
 }
 
 .social-section .social-reviews {
   width: 70%;
+  height: auto;
   margin: 15rem auto;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -241,6 +309,8 @@ body {
   display: flex;
   align-items: center;
   background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/reviews-back.jpg);
+  position: relative;
+  z-index: 10;
 }
 
 .social-section .social-reviews img {
@@ -262,6 +332,13 @@ body {
 
 .social-section .social-reviews .social-quote p {
   font-size: 3rem;
+}
+
+.drawing {
+  position: relative;
+  transform: scale(.2);
+  top: -38rem;
+  left: 55rem;
 }
 
 .social-section .social-ig {
@@ -298,4 +375,95 @@ body {
 
 footer {
   height: 40rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  display: flex;
+  width: 70%;
+  margin: 10rem auto;
+}
+
+.info .map {
+  width: 50%;
+  height: 40rem;
+  background-color: #000;
+  margin: 5rem;
+}
+
+.info .info-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info .info-text .contact {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.info .info-text .contact h3 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #03626b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.dash-detail {
+  width: 5rem;
+  height: .2rem;
+  background-color: #03626b;
+  margin: 0 auto;
+}
+
+.info .info-text .contact .contact-number {
+  margin-top: 5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.info .info-text .contact .footnote {
+  padding-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.info .info-text .opening-hours {
+  height: 50%;
+}
+
+.info .info-text .opening-hours h3 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: #03626b;
+  text-align: center;
+  margin: 1rem;
+}
+
+.info .info-text .opening-hours .timetable {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 5rem auto;
+}
+
+footer .copy {
+  background-color: #000;
+  height: 10rem;
+}
+
+footer .copy .copy-social {
+  text-align: center;
+}
+
+footer .copy .copy-social a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 1rem;
+  color: #03626b;
 }
