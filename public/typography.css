@@ -49,7 +49,7 @@ body {
 
 .txt-li /*nav-li*/ {
   text-transform: uppercase;
-  font-size: calc(1.5 * var(--unit));
+  font-size: calc(2 * var(--unit));
   letter-spacing: calc(.25 * var(--unit));
   list-style: none;
 }
