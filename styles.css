@@ -1,3 +1,10 @@
+:root {
+  --branding: #03626b;
+  --darkgrey: #c5c5c5;
+  --lightgrey: #d1d1d1;
+}
+
+
 @font-face {
     font-family: 'Noir';
     src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
@@ -21,7 +28,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: 'Noir';
-  background-color: var(--grey);
+  background-color: var(--darkgrey);
 }
 
 html,body {
@@ -38,7 +45,6 @@ html,body {
   background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/showcase-background.jpg);
   background-size: cover;
   background-attachment: fixed;
-  /*clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);*/
 }
 
 .showcase .nav-bar {
@@ -72,10 +78,11 @@ html,body {
   font-size: 1.3rem;
   letter-spacing: .2rem;
   list-style: none;
+  transition: all .2s;
 }
 
 .showcase .nav-bar .nav-links a {
-  color: var(--grey);
+  color: var(--lightgrey);
   text-decoration: none;
 }
 
@@ -86,8 +93,12 @@ html,body {
 .showcase .nav-bar .nav-social a {
   margin: 0 .5rem;
   text-decoration: none;
-  color: #d1d1d1;
+  color: var(--lightgrey);
   font-size: 1.8rem;
+}
+
+.nav-links li:hover {
+  transform: scale(1.1);
 }
 
 .showcase .showcase-text {
@@ -102,9 +113,9 @@ html,body {
 
 .showcase .showcase-text h1 {
   font-size: 6rem;
-  border-left: .2rem solid #d1d1d1;
+  border-left: .2rem solid var(--lightgrey);
   padding-left: 1rem;
-  color: #d1d1d1;
+  color:var(--lightgrey);
 }
 
 .showcase .showcase-text .booking-btn {
@@ -117,8 +128,15 @@ html,body {
   padding: 1.5rem 2rem;
   display: inline-block;
   border-radius: .5rem;
-  background-color: #03626b;
-  color: #d1d1d1;
+  background-color: var(--branding);
+  color: var(--lightgrey);
+  transition: all .2s;
+}
+
+.showcase .showcase-text .booking-btn:hover {
+  background-color: #1C7179;
+  transform: scale(1.05);
+  color: #fff;
 }
 
 .about-section {
@@ -126,7 +144,7 @@ html,body {
   transform: skewY(-5deg);
   position: relative;
   z-index: 0;
-  background-color: #d1d1d1;
+  background-color: var(--darkgrey);
   margin-top: -10rem;
 }
 
@@ -151,31 +169,12 @@ html,body {
   position: absolute;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
   border-radius: .3rem;
-  border: .5rem solid #03626b;
-  transition: all .3s;
+  transition: all .2s;
 }
 
 .about-images .about-img-1 {
   top: 0rem;
   left: 15rem;
-}
-
-.about-img-1:hover {
-  z-index: 90;
-  transform: scale(1.05) translateY(-.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
-}
-
-.about-img-2:hover {
-  z-index: 90;
-  transform: scale(1.05) translateY(-.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
-}
-
-.about-img-3:hover {
-  z-index: 90;
-  transform: scale(1.05) translateY(-.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
 }
 
 .about-images .about-img-2 {
@@ -186,6 +185,13 @@ html,body {
 .about-images .about-img-3 {
   top: 19rem;
   left: 25rem;
+}
+
+.effect:hover {
+  z-index: 90;
+  transform: scale(1.02) translateY(-.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
+  border: .5rem solid var(--branding);
 }
 
 .about-section .about-text {
@@ -202,7 +208,6 @@ html,body {
   width: 80%;
   display: flex;
   align-items: flex-end;
-  /*border-bottom: .5rem solid #03626b;*/
 }
 
 .about-section .about-text p {
@@ -215,12 +220,11 @@ html,body {
   background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/general2.jpg);
   background-size: cover;
   background-attachment: fixed;
-  color: #d1d1d1;
-  height: 130rem;
+  color: var(--lightgrey);
+  height: 160rem;
   padding: 6rem;
   margin-top: -10rem;
-  /*clip-path: polygon(0 25vh, 100% 0, 100% 100%, 0 100%);
-  margin-top: -25vh;*/
+  margin-bottom: 10rem;
 }
 
 .services-section h2 {
@@ -231,186 +235,270 @@ html,body {
 }
 
 .services-section .services-icons {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-around;
   margin: 7rem auto;
   padding: 2rem;
-  border: .5rem solid #03626b;
-  border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
+}
+
+.services-icons:hover .icon-single:not(:hover) {
+  transform: scale(.98);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, .2);
+  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../../src/images/fondo-madera.jpg);
+  background-position: center;
 }
 
 .services-section .services-icons .icon-single {
-  width: 20%;
+  width: 30%;
+  padding: 1rem;
+  margin: 1rem;
   text-align: left;
+  border-radius: .5rem;
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../../src/images/fondo-madera.jpg);
+  background-position: center;
+  transition: all .2s;
 }
 
 .services-section .services-icons .icon-single img {
   display: block;
   width: 70%;
-  padding: 1rem;
-  border: .5rem solid #03626b;
-  border-radius: 10rem;
   margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 10rem;
+}
+
+.services-section .services-icons .icon-single span {
+  padding: 0 1rem;
+  display: block;
 }
 
 .services-section .services-pricing {
-  width: 35%;
-  margin: 10rem auto;
-  padding: 2rem 1rem;
-  border: .5rem solid #03626b;
-  border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .6), rgba(0, 0, 0, .6) ), url(../../src/images/fondo-madera.jpg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.services-section .services-pricing h3 {
+.drawing1 {
+  transform: scale(.25);
+  width: 30%;
+}
+
+.pricelist {
+  width: 35%;
+  height: 50rem;
+  border-radius: .5rem;
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/fondo-madera.jpg);
+  background-position: center;
+}
+
+.drawing2 {
+  transform: scale(.3);
+  width: 30%;
+}
+
+.pricelist h3 {
   text-align: center;
   font-size: 4rem;
   text-transform: uppercase;
-  margin-bottom: 6rem;
+  margin: 3rem auto 6rem auto;
 }
 
-.services-section .services-pricing .price-line {
+.pricelist .price-line {
   width: 100%;
-  display: inline-block;
   height: 5rem;
   margin: 0 auto;
   padding: 0 2rem;
   font-size: 2rem;
-}
-
-.services-section .services-pricing .price-line .name {
-
-}
-
-.services-section .services-pricing .price-line .price {
-  float: right;
-}
-
-.drawing1 {
-  transform: scale(.3);
-  position: relative;
-  top: -56rem;
-  right: 45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .social-section {
-
+  height: 50rem;
+  transform: skewY(5deg);
+  background-color: var(--darkgrey);
+  margin-top: -25rem;
+  align-items: center;
 }
 
 .social-section .social-reviews {
+
   width: 70%;
-  height: auto;
-  margin: 15rem auto;
+  margin: auto;
   padding: 1rem 2rem;
   border-radius: 1rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
   display: flex;
   align-items: center;
-  background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/reviews-back.jpg);
-  position: relative;
+  background: linear-gradient( rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) ), url(../src/images/reviews-back.jpg);
   z-index: 10;
+  transform: skewY(-5deg);
+  background-size: cover;
 }
 
 .social-section .social-reviews img {
   width: 18rem;
   border-radius: 10rem;
-  border: .5rem solid #03626b;
+  border: .5rem solid var(--branding);
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
 }
 
-.social-section .social-reviews .social-quote {
-  display: flex;
-  align-items: center;
-}
-
-.social-section .social-reviews .social-quote .quote-marks {
+.social-section .social-reviews .quote-marks {
   font-size: 30rem;
-  color: #03626b;
+  color: var(--branding);
 }
 
-.social-section .social-reviews .social-quote p {
+.social-section .social-reviews p {
   font-size: 3rem;
+  color: var(--lightgrey);
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #67A0A6;
+  font-size: 30px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transform: skewY(-5deg);
+  transition: all .2s;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  transform: scale(1.5);
+  color: var(--branding);
+}
+
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  transform: skewY(-5deg);
+}
+
+.dot {
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  margin: 0 .4rem;
+  background-color: #67A0A6;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--branding);
 }
 
 .drawing {
   position: relative;
-  transform: scale(.2);
-  top: -38rem;
-  left: 55rem;
+  transform: scale(.2) skewY(-5deg);
+  top: -35rem;
+  left:60rem;
 }
 
-.social-section .social-ig {
+.social-ig {
   background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/social-back.jpg);
   background-position: cover;
   background-attachment: fixed;
-  height: 45rem;
+  height: 55rem;
+  margin-top: -7rem;
 }
 
-.social-section .social-ig a {
+.ig-content {
+  padding-top: 15rem;
+  height: 100%;
+}
+
+.social-ig a {
   text-decoration: none;
   color: #000;
 }
 
-.social-section .social-ig h2 {
+.social-ig h2 {
   text-align: center;
   font-size: 5rem;
   text-transform: uppercase;
-  color: #d1d1d1;
+  color: var(--lightgrey);
   padding: 6rem;
 }
 
 
-.social-section .social-ig .social-ig-images {
+.social-ig .social-ig-images {
   display: flex;
   justify-content: space-around;
 }
 
-.social-section .social-ig .social-ig-images .ig-img img {
+.social-ig .social-ig-images .ig-img img {
   width: 22rem;
-  border: .5rem solid #03626b;
+  border: .5rem solid var(--branding);
   border-radius: .5rem;
-}
-
-footer {
-  height: 40rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .info {
   display: flex;
-  width: 70%;
+  align-items: center;
+  width: 80%;
   margin: 10rem auto;
 }
 
-.info .map {
-  width: 50%;
+.map {
+  width: 40%;
   height: 40rem;
   background-color: #000;
   margin: 5rem;
 }
 
-.info .info-text {
+.info-text {
   width: 50%;
+  height: 40rem;
   display: flex;
   flex-direction: column;
 }
 
-.info .info-text .contact {
+.opening-hours {
   height: 50%;
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-
 }
 
-.info .info-text .contact h3 {
+.timetable {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 5rem auto;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.timetable div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact {
+  width: 80%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-heading {
   font-size: 3.5rem;
   text-transform: uppercase;
-  color: #03626b;
+  color: var(--branding);
   text-align: center;
   margin: 1rem;
 }
@@ -418,38 +506,24 @@ footer {
 .dash-detail {
   width: 5rem;
   height: .2rem;
-  background-color: #03626b;
+  background-color: var(--branding);
   margin: 0 auto;
 }
 
-.info .info-text .contact .contact-number {
+.contact-number {
   margin-top: 5rem;
   font-size: 2rem;
   text-align: center;
 }
 
-.info .info-text .contact .footnote {
-  padding-top: 3rem;
+.footnote {
+  padding: 3rem;
   font-size: 1.5rem;
 }
 
-.info .info-text .opening-hours {
-  height: 50%;
-}
-
-.info .info-text .opening-hours h3 {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  color: #03626b;
-  text-align: center;
-  margin: 1rem;
-}
-
-.info .info-text .opening-hours .timetable {
+footer {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin: 5rem auto;
 }
 
 footer .copy {
@@ -465,5 +539,5 @@ footer .copy .copy-social a {
   text-decoration: none;
   font-size: 2.5rem;
   margin: 1rem;
-  color: #03626b;
+  color: var(--branding);
 }
