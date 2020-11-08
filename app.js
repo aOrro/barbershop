@@ -45,3 +45,31 @@ let map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 
 // Google Location Map END
+
+// Burger Menu
+
+const navSlide = () => {
+  const burger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    // Open Menu
+    burger.classList.toggle('no-shadow');
+    nav.classList.toggle('nav-active');
+    // Links fade efffect
+    navLinks.forEach((link, index) => {
+      if(link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade .5s ease forwards ${index / 5 + .2}s`;
+      }
+    });
+    // Burger animation
+    burger.classList.toggle('toggle');
+  });
+}
+
+navSlide();
+
+//Burger Menu END
