@@ -73,3 +73,25 @@ const navSlide = () => {
 navSlide();
 
 //Burger Menu END
+
+
+//Slide Images About Section
+
+let slideInd = 0;
+autoSlide();
+
+function autoSlide() {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideInd++;
+  if (slideInd > slides.length) {
+    slideInd = 1
+  }
+  slides[slideInd-1].style.display = "block";
+  setTimeout(autoSlide, 2000); // Change image every 2 seconds
+}
+
+//Slide Images About Section END
