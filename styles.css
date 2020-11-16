@@ -4,14 +4,23 @@
   --lightgrey: #d1d1d1;
 }
 
+@font-face {
+  font-family: Noir;
+  src: url("font-noir/Noir_regular.otf") format("opentype");
+}
 
 @font-face {
+  font-family: Noir;
+  font-weight: bold;
+  src: url("font-noir/Noir_medium.otf") format("opentype");
+}
+/*@font-face {
     font-family: 'Noir';
     src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
          url('./font-noir/noir_regular-webfont.woff') format('woff');
     font-weight: normal bold;
     font-style: normal;
-}
+}*/
 
 
 
@@ -32,19 +41,16 @@ body {
 }
 
 html,body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/showcase-background.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-chairs.jpg);
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
 }
 
 .showcase .nav-bar {
@@ -55,7 +61,7 @@ html,body {
   justify-content: space-between;
   align-items: flex-end;
   position: fixed;
-  z-index: 90;
+  z-index: 10;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
   top: 0;
 }
@@ -68,7 +74,7 @@ html,body {
 .showcase .nav-bar .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 50%;
 }
 
 .showcase .nav-bar .nav-links li {
@@ -87,15 +93,16 @@ html,body {
 
 .nav-links li:hover,
 .nav-links li:focus {
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 .showcase .nav-bar .nav-social {
-  margin: 0 2em;
+  margin: 0 1em;
+  display: flex;
 }
 
 .showcase .nav-bar .nav-social svg {
-  margin: 0;
+  margin: .25em;
   text-decoration: none;
   color: var(--lightgrey);
 }
@@ -105,7 +112,7 @@ html,body {
   display: none;
   cursor: pointer;
   background-color: var(--branding);
-  padding: 1.6em 1.2em;
+  padding: 16px 12px;
   position: fixed;
   top: 0;
   right: 0;
@@ -117,8 +124,8 @@ html,body {
   width: 25px;
   height: 2px;
   background-color: #d1d1d1;
-  margin: .5em;
-  transition: all .2s ease;
+  margin: 5px;
+  transition: all .3s ease;
 }
 
 .showcase .showcase-text {
@@ -133,8 +140,6 @@ html,body {
 
 .showcase .showcase-text h1 {
   font-size: 6rem;
-  border-left: .2rem solid var(--lightgrey);
-  padding-left: .2em;
   color:var(--lightgrey);
 }
 
@@ -172,6 +177,7 @@ html,body {
     justify-content: space-around;
     position: relative;
     background: transparent;
+    box-shadow: none;
   }
 
   .nav-logo {
@@ -193,7 +199,6 @@ html,body {
     display: flex;
     flex-direction: column;
     text-align: left;
-    width: 50%;
     padding: 10em 3em;
     transform: translateX(100%);
     transition: transform .2s ease-in;
@@ -227,7 +232,6 @@ html,body {
   }
 
   .booking-btn {
-    transform: scale(1.5);
     margin-top: 1em;
   }
 }
@@ -245,6 +249,7 @@ html,body {
     justify-content: space-around;
     position: relative;
     background: transparent;
+    box-shadow: none;
   }
 
   .nav-logo {
@@ -306,7 +311,9 @@ html,body {
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-
+  .showcase .nav-bar .nav-links {
+    width: 50%;
+  }
 }
 
 .nav-active {
@@ -345,9 +352,9 @@ html,body {
   height: 50rem;
   transform: skewY(-5deg);
   position: relative;
-  z-index: 0;
   background-color: var(--darkgrey);
   margin-top: -4em;
+  overflow: hidden;
 }
 
 .about-content {
@@ -358,42 +365,41 @@ html,body {
   width: 50%;
   display: inline-block;
   position: relative;
-  z-index: 80;
-}
-
-.about-images:hover .about-img:not(:hover) {
-  transform: scale(.95);
-  box-shadow: 0 1rem 4rem rgba(0, 0, 0, .2);
 }
 
 .about-img {
-  width: 55%;
-  position: absolute;
+  width: 90%;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  border-radius: .3rem;
-  transition: all .2s;
+  margin: 0 auto;
 }
 
-.about-images img:nth-child(1) {
-  top: 0em;
-  left: 10em;
+.mySlides {
+  display: none;
 }
 
-.about-images img:nth-child(2) {
-  top: 10em;
-  left: 5em;
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.about-images img:nth-child(3) {
-  top: 12em;
-  left: 16em;
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
-.effect:hover {
-  z-index: 90;
-  transform: scale(1.02) translateY(-.5rem);
-  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, .5);
-  border: .5rem solid var(--branding);
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 .about-section .about-text {
@@ -417,6 +423,39 @@ html,body {
   height: 55%;
   padding-top: 3em;
   width: 90%
+}
+
+.mySlides {
+  display: none;
+}
+
+.active {
+  background-color: var(--darkgrey);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -467,7 +506,7 @@ html,body {
   }
 
   .about-section .about-text {
-    width: 85%;
+    width: 90%;
     margin: 2rem;
     padding: 0;
     /*padding-top: 20%;*/
@@ -479,11 +518,11 @@ html,body {
   }
 
   .about-section .about-text p {
-
     font-size: 3rem;
     letter-spacing: .5px;
     line-height: 4rem;
     padding-top: 2em;
+    margin: 0 auto;
   }
 }
 
@@ -536,7 +575,7 @@ html,body {
 
   .about-section .about-text {
     width: 75%;
-    margin: 1rem;
+    margin: 1rem auto;
     padding: 0;
   }
 
@@ -546,9 +585,10 @@ html,body {
   }
 
   .about-section .about-text p {
-    font-size: 2rem;
+    font-size: 2.3rem;
     line-height: 3rem;
     padding-top: 2em;
+    margin: 0 auto;
   }
 }
 
@@ -562,7 +602,7 @@ html,body {
   }
 
   .about-img {
-    width: 65%;
+    width: 90%;
   }
 
   .about-images img:nth-child(1) {
@@ -590,9 +630,10 @@ html,body {
 }
 
 .services-section {
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/general3.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-whole.jpg);
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
   color: var(--lightgrey);
   height: 160rem;
   padding: 5em;
@@ -600,7 +641,7 @@ html,body {
 }
 
 .services-section h2 {
-  font-size: 5rem;
+  font-size: 6rem;
   text-transform: uppercase;
   text-align: center;
   margin-top: 4em;
@@ -631,6 +672,7 @@ html,body {
   margin: 1em auto;
   padding: .5em;
   border-radius: 10rem;
+  background-color: white;
 }
 
 .services-section .services-icons .icon-single span {
@@ -645,13 +687,6 @@ html,body {
   position: relative;
 }
 
-.drawing1 img {
-  width: 25%;
-  position: absolute;
-  left: 0em;
-  top: 15em;
-}
-
 .pricelist {
   width: 40%;
   height: 50rem;
@@ -659,13 +694,6 @@ html,body {
   border-radius: .5rem;
   background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/fondo-madera.jpg);
   background-position: center;
-}
-
-.drawing2 img {
-  width: 25%;
-  position: absolute;
-  right: -2em;
-  top: 15em;
 }
 
 .pricelist h3 {
@@ -720,7 +748,7 @@ html,body {
   }
 
   .services-section .services-icons .icon-single span {
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 3rem;
     padding: .5em;
     display: block;
@@ -792,7 +820,7 @@ html,body {
   }
 
   .services-section .services-icons .icon-single span {
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 2rem;
     padding: .5em;
     display: block;
@@ -808,7 +836,7 @@ html,body {
   }
 
   .pricelist {
-    width: 90%;
+    width: 35em;
     height: auto;
     border-radius: 1.5rem;
     margin: 6em auto 14em auto;
@@ -963,13 +991,6 @@ html,body {
   background-color: var(--branding);
 }
 
-.drawing {
-  position: relative;
-  transform: scale(.2);
-  top: -21em;
-  left: 37em;
-}
-
 @media only screen and (max-width: 500px) {
   .social-section {
     height: auto;
@@ -1096,9 +1117,10 @@ html,body {
 }
 
 .social-ig {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/social-back.jpg);
-  background-position: cover;
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/logo-side.jpg);
+  background-size: cover;
   background-attachment: fixed;
+  background-position: center;
   height: 55rem;
   margin-top: -4em;
 }
@@ -1167,22 +1189,27 @@ html,body {
 .info {
   display: flex;
   align-items: center;
-  width: 80%;
-  margin: 6em auto;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/shop-till.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .map {
-  width: 50%;
+  width: 35%;
   height: 40rem;
   background-color: #000;
-  margin: 3em;
+  margin: 10em 3em 10em auto;
 }
 
 .info-text {
-  width: 50%;
+  width: 40%;
   height: 40rem;
   display: flex;
   flex-direction: column;
+  margin: 10em auto 10em 3em;
 }
 
 .opening-hours {
@@ -1192,11 +1219,11 @@ html,body {
 .timetable {
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin: 3em auto;
+  width: 70%;
+  margin: 2em auto;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
 }
 
 .timetable time {
@@ -1205,7 +1232,7 @@ html,body {
 }
 
 .contact {
-  width: 80%;
+  width: 90%;
   height: 50%;
   margin: 0 auto;
   display: flex;
@@ -1245,11 +1272,16 @@ html,body {
     align-items: center;
     width: 100%;
     margin-bottom: 0;
+    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barbershop-background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
   }
 
   .info-text {
     width: 80%;
     height: auto;
+    margin: 10em auto 5em auto;
   }
 
   .contact-heading {
@@ -1257,9 +1289,9 @@ html,body {
   }
 
   .timetable {
-    width: 100%;
-    margin: 3em auto;
-    font-size: 3rem;
+    width: 80%;
+    margin: 2em auto;
+    font-size: 2.5rem;
     line-height: 5rem;
   }
 
@@ -1286,7 +1318,7 @@ html,body {
 
   .map {
     width: 100%;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 
@@ -1302,7 +1334,7 @@ html,body {
   .info-text {
     width: 70%;
     height: auto;
-    margin-top: 3em;
+    margin: 6em auto;
   }
 
   .contact-heading {
@@ -1339,7 +1371,7 @@ html,body {
 
   .map {
     width: 100%;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 
