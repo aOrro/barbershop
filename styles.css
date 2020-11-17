@@ -1287,7 +1287,6 @@ html,body {
     width: 100%;
     margin-bottom: 0;
     background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/rsz_barbershop-background.jpg);
-    background-attachment: fixed;
     background-size: cover;
 
   }
