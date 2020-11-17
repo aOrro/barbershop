@@ -162,7 +162,7 @@ html,body {
 
   .showcase {
     height: 110vh;
-    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/rsz_barbershop-chairs.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/rsz_barbershop-chairs.jpg);
     background-size: cover;
     background-position: center;
   }
