@@ -65,14 +65,18 @@ const navSlide = () => {
         link.style.animation = `navLinkFade .5s ease forwards ${index / 5 + .2}s`;
       }
     });
+
     // Burger animation
     burger.classList.toggle('toggle');
+  });
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      burger.click();
+    });
   });
 }
 
 navSlide();
-
-//Burger Menu END
 
 
 //Slide Images About Section
