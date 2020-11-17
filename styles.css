@@ -1,6 +1,6 @@
 :root {
-  --branding: #03626b;
-  --darkgrey: #c5c5c5;
+  --branding: #00454d;/*#03626b*/
+  --darkgrey: #a7a7a7;
   --lightgrey: #d1d1d1;
 }
 
@@ -14,14 +14,6 @@
   font-weight: bold;
   src: url("font-noir/Noir_medium.otf") format("opentype");
 }
-/*@font-face {
-    font-family: 'Noir';
-    src: url('./font-noir/noir_regular-webfont.woff2') format('woff2'),
-         url('./font-noir/noir_regular-webfont.woff') format('woff');
-    font-weight: normal bold;
-    font-style: normal;
-}*/
-
 
 
 * {
@@ -47,7 +39,7 @@ html,body {
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-chairs.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-chairs.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -160,7 +152,6 @@ html,body {
 
 .showcase .showcase-text .booking-btn:hover {
   background-color: #1C7179;
-  transform: scale(1.05);
   color: #fff;
 }
 
@@ -171,6 +162,10 @@ html,body {
 
   .showcase {
     height: 110vh;
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/rsz_barbershop-chairs.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
   }
 
   .showcase .nav-bar {
@@ -317,7 +312,7 @@ html,body {
 }
 
 .nav-active {
-  transform:translateX(0%);
+  transform: translateX(0%);
 }
 
 .no-shadow {
@@ -349,28 +344,36 @@ html,body {
 }
 
 .about-section {
-  height: 50rem;
+  height: 70rem;
   transform: skewY(-5deg);
   position: relative;
   background-color: var(--darkgrey);
   margin-top: -4em;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-content {
   transform: skewY(5deg);
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding-top: 2.5em;
 }
 
 .about-images {
   width: 50%;
+  height: 100%;
   display: inline-block;
   position: relative;
+  padding: auto 0;
 }
 
 .about-img {
-  width: 90%;
+  width: 80%;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  margin: 0 auto;
+  margin: 4em;
 }
 
 .mySlides {
@@ -379,9 +382,9 @@ html,body {
 
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
+  -webkit-animation-duration: 2s;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {
@@ -404,23 +407,19 @@ html,body {
 
 .about-section .about-text {
   width: 50%;
-  height: 100%;
   float: right;
-  padding-top: 9em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .about-section .about-text h2 {
   font-size: 6rem;
   text-transform: uppercase;
-  height: 45%;
-  /*width: 80%;
-  /*display: flex;  Deleted for media queries
-  align-items: flex-end;*/
 }
 
 .about-section .about-text p {
   font-size: 2rem;
-  height: 55%;
   padding-top: 3em;
   width: 90%
 }
@@ -594,7 +593,11 @@ html,body {
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
   .about-section {
-    height: 45rem;
+    height: 60rem;
+  }
+
+  .about-content {
+    width: 100%;
   }
 
   .about-images {
@@ -602,7 +605,7 @@ html,body {
   }
 
   .about-img {
-    width: 90%;
+    width: 70%;
   }
 
   .about-images img:nth-child(1) {
@@ -672,7 +675,7 @@ html,body {
   margin: 1em auto;
   padding: .5em;
   border-radius: 10rem;
-  background-color: white;
+  background-color: var(--darkgrey);
 }
 
 .services-section .services-icons .icon-single span {
@@ -831,10 +834,6 @@ html,body {
     margin: 0 auto;
   }
 
-  .drawing1, .drawing2 {
-    display: none;
-  }
-
   .pricelist {
     width: 35em;
     height: auto;
@@ -852,10 +851,6 @@ html,body {
     width: 100%;
     height: 8rem;
     font-size: 2.5rem;
-  }
-
-  .drawing2 {
-    display: none;
   }
 }
 
@@ -877,25 +872,13 @@ html,body {
     width: 13em;
   }
 
-  .drawing1 img {
-    width: 25%;
-    left: .5em;
-    top: 20em;
-  }
-
   .pricelist {
     width: 25em;
-  }
-
-  .drawing2 img {
-    width: 25%;
-    right: 0;
-    top: 20em;
   }
 }
 
 .social-section {
-  height: 50rem;
+  height: auto;
   transform: skewY(5deg);
   background-color: var(--darkgrey);
   margin-top: -4em;
@@ -907,37 +890,51 @@ html,body {
   height: 50rem;
   width: 100%;
   transform: skewY(-5deg);
-  padding: 5.6em;
+  padding: 2em;
 }
 
 .social-section .social-reviews {
   width: 80%;
+  height: auto;
   margin: auto;
-  padding: 0 2em;
-  border-radius: 1rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  background: linear-gradient( rgba(0, 0, 0, .2), rgba(0, 0, 0, .2) ), url(../src/images/reviews-back.jpg);
-  z-index: 10;
-  background-size: cover;
-}
-
-.social-section .social-reviews img {
-  width: 20%;
-  border-radius: 10rem;
-  border: .5rem solid var(--branding);
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
 }
 
 .social-section .social-reviews .quote-marks {
   font-size: 30rem;
   color: var(--branding);
+  height: .2em;
+  margin-top: .05em;
+}
+
+.social-section .social-reviews .review-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .social-section .social-reviews p {
+  font-size: 2.5rem;
+
+  margin: 3em auto 2em auto;
+}
+
+.social-section .social-reviews .name {
+
   font-size: 3rem;
-  color: var(--lightgrey);
+  margin: 1em auto;
+}
+
+.social-section .social-reviews .review-text .stars {
+  display: flex;
+  justify-content: center;
+}
+
+.social-section .social-reviews svg {
+  color: #FDCC0D;
+  margin: 0 .25em;
 }
 
 .prev, .next {
@@ -947,7 +944,7 @@ html,body {
   width: auto;
   margin-top: -1em;
   color: #67A0A6;
-  font-size: 3rem;
+  font-size: 5rem;
   border-radius: 0 .3rem .3rem 0;
   user-select: none;
   transition: all .2s;
@@ -956,13 +953,13 @@ html,body {
 /* Position the "next button" to the right */
 .prev {
   position: absolute;
-  left: 5em;
+  left: 2em;
   border-radius: .3rem 0 0 .3rem;
 }
 
 .next {
   position: absolute;
-  right: 5em;
+  right: 2em;
   border-radius: .3rem 0 0 .3rem;
 }
 
@@ -999,7 +996,8 @@ html,body {
   .social-section .social-content {
     width: 100%;
     height: 25em;
-    padding: 6em 0;
+    margin: auto;
+    padding: 4em 0;
   }
 
   .social-section .social-reviews {
@@ -1009,31 +1007,47 @@ html,body {
     margin: 0 auto;
   }
 
-  .social-section .social-reviews img {
-    width: 25%;
+  .social-section .social-reviews .review-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-section .social-reviews p {
+    font-size: 1.8rem;
+    margin: 1.5em auto 1em auto;
+  }
+
+  .social-section .social-reviews .name {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  .social-section .social-reviews .stars {
+    justify-content: space-around;
+  }
+
+  .social-section .social-reviews svg {
+    transform: scale(.5);
+
   }
 
   .social-section .social-reviews .quote-marks {
     font-size: 20rem;
   }
 
-  .social-section .social-reviews p {
-    font-size: 2.5rem;
-    letter-spacing: .5px;
-  }
-
   .prev {
-    left: 6em;
-    top: 2em;
+    left: 2em;
+    top: 6em;
   }
 
   .next {
-    right: 6em;
-    top: 2em;
+    right: 2em;
+    top: 6em;
   }
 
-  .drawing {
-    display: none;
+  .dot-container {
+    padding: 0;
   }
 }
 
@@ -1121,7 +1135,7 @@ html,body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  height: 55rem;
+  height: auto;
   margin-top: -4em;
 }
 
@@ -1146,6 +1160,7 @@ html,body {
 .social-ig .social-ig-images {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .social-ig .social-ig-images .ig-img img {
@@ -1191,7 +1206,7 @@ html,body {
   align-items: center;
   width: 100%;
   height: auto;
-  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/shop-till.jpg);
+  background: linear-gradient(rgba(167, 167, 167, .8), rgba(167, 167, 167, .8)) ,url(../src/images/shop-till.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1272,7 +1287,7 @@ html,body {
     align-items: center;
     width: 100%;
     margin-bottom: 0;
-    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barbershop-background.jpg);
+    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/rsz_barbershop-background.jpg);
     background-attachment: fixed;
     background-size: cover;
 
@@ -1303,7 +1318,7 @@ html,body {
 
   .dash-detail {
     width: 3em;
-    height: .4rem;
+    height: .2rem;
   }
 
   .contact-number {
@@ -1388,18 +1403,21 @@ footer .copy {
   color: var(--lightgrey);
 }
 
+footer .foot-logo {
+  width: 20rem;
+  margin-bottom: 1em;
+}
+
 footer .copy .copy-social {
   text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 2em auto 1em auto;
 }
 
 footer .copy .copy-social svg {
   color: var(--branding);
-  margin: 3em .25em .25em .25em;
-}
-
-footer .copy a {
-  width: 20rem;
-  margin-bottom: .5em;
+  margin: 0 .5em;
 }
 
 footer .copy:last-child {
