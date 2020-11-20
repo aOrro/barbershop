@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
 :root {
-  --branding: #003f4d;/*#03626b*/
+  --branding: #003f4d; /*#00454d;/*#03626b*/
   --darkgrey: #a7a7a7;
   --lightgrey: #d1d1d1;
+  --btn-hover-blue: #1C7179;
+  --stars: #FDCC0D;
+  --white: #fff;
+  --black: #000;
 }
+
+
 
 @font-face {
   font-family: Noir;
@@ -16,10 +25,17 @@
 }
 
 
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 html {
@@ -32,30 +48,29 @@ body {
   background-color: var(--darkgrey);
 }
 
-html,body {
-  overflow-x: hidden;
-}
+
+
 
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-chairs.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-look.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
 }
 
-.showcase .nav-bar {
+.nav-bar {
   width: 100%;
   height: 8rem;
+  top: 0;
   background-color: var(--branding);
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: fixed;
   z-index: 10;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  top: 0;
 }
 
 .nav-logo {
@@ -63,64 +78,63 @@ html,body {
   margin: auto .5rem;
 }
 
-.showcase .nav-bar .nav-links {
+.nav-links {
   display: flex;
   justify-content: space-around;
   width: 50%;
 }
 
-.showcase .nav-bar .nav-links li {
+.nav-links li {
   margin-bottom: .5em;
   text-transform: uppercase;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   letter-spacing: .2em;
   list-style: none;
-  transition: all .2s;
+  transition: all .3s;
 }
 
-.showcase .nav-bar .nav-links a {
+.nav-links a {
   color: var(--lightgrey);
   text-decoration: none;
 }
 
 .nav-links li:hover,
 .nav-links li:focus {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
-.showcase .nav-bar .nav-social {
+.nav-social {
   margin: 0 1em;
   display: flex;
 }
 
-.showcase .nav-bar .nav-social svg {
-  margin: .25em;
-  text-decoration: none;
+.nav-social svg {
+  margin: .5em .25em;
   color: var(--lightgrey);
 }
 
-.hamburger {
-  margin: 1.5em;
+.hamburger-menu {
   display: none;
   cursor: pointer;
   background-color: var(--branding);
-  padding: 16px 12px;
   position: fixed;
+  margin: 1.5em;
+  padding: 16px 12px;
   top: 0;
   right: 0;
   border-radius: 100%;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
 }
 
-.hamburger div {
+.hamburger-menu div {
   width: 25px;
   height: 2px;
-  background-color: #d1d1d1;
   margin: 5px;
+  background-color: var(--lightgrey);
   transition: all .3s ease;
 }
 
-.showcase .showcase-text {
+.showcase-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,12 +144,12 @@ html,body {
   text-transform: uppercase;
 }
 
-.showcase .showcase-text h1 {
+.showcase-text h1 {
   font-size: 6rem;
-  color:var(--lightgrey);
+  color: var(--lightgrey);
 }
 
-.showcase .showcase-text .booking-btn {
+.booking-btn {
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
@@ -150,87 +164,24 @@ html,body {
   transition: all .2s;
 }
 
-.showcase .showcase-text .booking-btn:hover {
-  background-color: #1C7179;
-  color: #fff;
+.booking-btn:hover {
+  background-color: var(--btn-hover-blue);
+  color: var(--white);
 }
+
 
 @media only screen and (max-width: 500px) {
   :root {
     --branding: #00364d;
   }
-  
+
   html {
     font-size: 40%;
   }
 
-  .showcase {
-    height: 100vh;
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/rsz_barbershop-chairs.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .showcase .nav-bar {
-    justify-content: space-around;
-    position: relative;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .nav-logo {
-    width: 15em;
-    position: fixed;
-    top: 1em;
-    left: 1em;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  }
-
   .nav-links {
-    position: fixed;
-    padding-top: 8rem;
-    right: 0px;
     height: 70vh;
-    top: 0;
-    background-color: var(--branding);
-    border-bottom-left-radius: 3rem;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
     padding: 10em 3em;
-    transform: translateX(100%);
-    transition: transform .2s ease-in;
-  }
-
-  .nav-links li {
-    opacity: 0;
-  }
-
-  .nav-links li a {
-    font-size: 2.5rem ;
-  }
-
-  .showcase .nav-bar .nav-social {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .showcase .showcase-text {
-    margin-top: -8rem;
-  }
-
-  .showcase .showcase-text h1 {
-    font-size: 6rem;
-    text-align: center;
-    border: none;
-    margin-bottom: .3em;
-  }
-
-  .booking-btn {
-    margin-top: 1em;
   }
 }
 
@@ -243,9 +194,27 @@ html,body {
     height: 110vh;
   }
 
-  .showcase .nav-bar {
+  .nav-links {
+    height: 40vh;
+    padding: 6em 3em;
+    width: 35%;
+  }
+
+  .hamburger-menu {
+    margin: 2em;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .showcase {
+    height: 110vh;
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-look.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .nav-bar {
     justify-content: space-around;
-    position: relative;
     background: transparent;
     box-shadow: none;
   }
@@ -259,18 +228,14 @@ html,body {
   }
 
   .nav-links {
+    top: 0;
+    right: 0;
     position: fixed;
     padding-top: 8rem;
-    right: 0px;
-    height: 70vh;
-    top: 0;
     background-color: var(--branding);
     border-bottom-left-radius: 3rem;
-    display: flex;
     flex-direction: column;
     text-align: left;
-    width: 50%;
-    padding: 10em 3em;
     transform: translateX(100%);
     transition: transform .2s ease-in;
   }
@@ -280,37 +245,32 @@ html,body {
   }
 
   .nav-links li a {
-    font-size: 3rem;
+    font-size: 2.5rem ;
   }
 
-  .showcase .nav-bar .nav-social {
+  .nav-social {
     display: none;
   }
 
-  .hamburger {
+  .hamburger-menu {
     display: block;
-    margin: 2em;
   }
 
-  .showcase .showcase-text {
+  .showcase-text {
     margin-top: -8rem;
   }
 
-  .showcase .showcase-text h1 {
-    font-size: 5rem;
+  .showcase-text h1 {
+    font-size: 6rem;
     text-align: center;
-    border: none;
-    margin-bottom: .3em;
   }
 
   .booking-btn {
-    transform: scale(1.1);
-  }
-}
-
-@media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .showcase .nav-bar .nav-links {
-    width: 50%;
+    font-size: 2.6rem;
+    letter-spacing: .1em;
+    margin: 1.5em;
+    padding: 1em 1em;
+    border-radius: .3em;
   }
 }
 
@@ -347,10 +307,10 @@ html,body {
 }
 
 .about-section {
-  height: 70rem;
+  height: auto;
   transform: skewY(-5deg);
   position: relative;
-  background-color: var(--darkgrey);
+  background-color: var(--lightgrey);
   margin-top: -4em;
   display: flex;
   align-items: center;
@@ -369,18 +329,22 @@ html,body {
   width: 50%;
   height: 100%;
   display: inline-block;
-  position: relative;
-  padding: auto 0;
 }
 
 .about-img {
   width: 80%;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+  border-radius: 5px;
   margin: 4em;
 }
 
 .mySlides {
   display: none;
+  text-align: center;
+}
+
+.active {
+  background-color: var(--darkgrey);
 }
 
 .fade {
@@ -392,77 +356,45 @@ html,body {
 
 @-webkit-keyframes fade {
   from {
-    opacity: .4
+    opacity: .4;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
 @keyframes fade {
   from {
-    opacity: .4
+    opacity: .4;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
-.about-section .about-text {
+.about-text {
   width: 50%;
-  float: right;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.about-section .about-text h2 {
+.about-text h2 {
   font-size: 6rem;
   text-transform: uppercase;
 }
 
-.about-section .about-text p {
+.about-text p {
   font-size: 2rem;
   padding-top: 3em;
   width: 90%
 }
 
-.mySlides {
-  display: none;
-}
-
-.active {
-  background-color: var(--darkgrey);
-}
-
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
-  }
-  to {
-    opacity: 1
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: .4
-  }
-  to {
-    opacity: 1
-  }
-}
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 850px) {
   .about-section {
-    height: auto;
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/best-barbers-prize.jpg);
+    background-size: cover;
+    background-position: center;
   }
 
   .about-content {
@@ -479,170 +411,91 @@ html,body {
   }
 
   .about-img {
-    position: relative;
-    width: 90%;
-    margin: 3em auto;
     border: .5rem solid var(--branding);
+    border-radius: 5px;
   }
 
-  .about-images:hover .about-img:not(:hover) {
-    transform: none;
-  }
-
-  .about-images img:nth-child(1) {
-    display: block;
-    margin: 0 auto;
-    left: 0;
-  }
-
-  .about-images img:nth-child(2) {
-    top: 0;
-    left: 0;
-    display: none;
-  }
-
-  .about-images img:nth-child(3) {
-    top: 0;
-    left: 0;
-    display: none;
-  }
-
-  .about-section .about-text {
-    width: 90%;
-    margin: 2rem;
-    padding: 0;
-    /*padding-top: 20%;*/
-  }
-
-  .about-section .about-text h2 {
+  .about-text h2 {
     font-size: 6rem;
     text-align: center;
   }
 
-  .about-section .about-text p {
-    font-size: 3rem;
-    letter-spacing: .5px;
-    line-height: 4rem;
+  .about-text p {
     padding-top: 2em;
     margin: 0 auto;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .about-img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .about-text {
+    width: 100%;
+    margin: 2rem;
+  }
+
+  .about-text p {
+    font-size: 3rem;
+    letter-spacing: .5px;
+    line-height: 3.5rem;
   }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .about-section {
-    height: auto;
-  }
-
-  .about-content {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    margin: auto;
-    padding: 7em 0em;
-  }
-
-  .about-images {
-    width: 100%;
-    padding: 2em 0em;
-  }
-
   .about-img {
-    position: relative;
-    width: 70%;
-    margin: 3em auto;
-    border: .5rem solid var(--branding);
+    width: 80%;
   }
 
-  .about-images:hover .about-img:not(:hover) {
-    transform: none;
-  }
-
-  .about-images img:nth-child(1) {
-    display: block;
-    margin: 2em auto;
-    left: 0;
-  }
-
-  .about-images img:nth-child(2) {
-    top: 0;
-    left: 0;
-    display: none;
-  }
-
-  .about-images img:nth-child(3) {
-    top: 0;
-    left: 0;
-    display: none;
-  }
-
-  .about-section .about-text {
-    width: 75%;
+  .about-text {
+    width: 80%;
     margin: 1rem auto;
-    padding: 0;
   }
 
-  .about-section .about-text h2 {
-    font-size: 5rem;
-    text-align: center;
-  }
-
-  .about-section .about-text p {
-    font-size: 2.3rem;
-    line-height: 3rem;
-    padding-top: 2em;
-    margin: 0 auto;
+  .about-text p {
+    font-size: 3rem;
+    line-height: 3.5rem;
   }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .about-section {
-    height: 60rem;
-  }
-
   .about-content {
     width: 100%;
-  }
-
-  .about-images {
-    width: 50%;
   }
 
   .about-img {
     width: 70%;
   }
 
-  .about-images img:nth-child(1) {
-    top: 0em;
-    left: 7em;
-  }
-
-  .about-images img:nth-child(2) {
-    top: 8em;
-    left: 3em;
-  }
-
-  .about-images img:nth-child(3) {
-    top: 12em;
-    left: 10em;
-  }
-
-  .about-section .about-text {
+  .about-text {
     width: 45%;
   }
 
-  .about-section .about-text h2 {
-    font-size: 5rem;
+  .about-text h2 {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .about-section {
+    transform: skewY(0deg);
+  }
+
+  .about-content {
+    transform: skewY(0deg);
   }
 }
 
 .services-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-whole.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-action.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
   color: var(--lightgrey);
-  height: 160rem;
-  padding: 5em;
+  padding: 5em 0 12em 0;
   margin-top: -4em;
 }
 
@@ -650,10 +503,10 @@ html,body {
   font-size: 6rem;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 4em;
+  margin-top: 3em;
 }
 
-.services-section .services-icons {
+.services-icons {
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -661,7 +514,7 @@ html,body {
   padding: 2em;
 }
 
-.services-section .services-icons .icon-single {
+.icon-single {
   width: 15em;
   padding: .5em;
   margin: .5em;
@@ -672,7 +525,7 @@ html,body {
   transition: all .2s;
 }
 
-.services-section .services-icons .icon-single img {
+.icon-single img {
   display: block;
   width: 70%;
   margin: 1em auto;
@@ -681,12 +534,12 @@ html,body {
   background-color: var(--darkgrey);
 }
 
-.services-section .services-icons .icon-single span {
+.icon-single span {
   padding: 0 .5em;
   display: block;
 }
 
-.services-section .services-pricing {
+.services-pricing {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -695,8 +548,9 @@ html,body {
 
 .pricelist {
   width: 40%;
-  height: 50rem;
-  padding: 1em;
+  max-width: 450px;
+  height: auto;
+  padding: 2em 1em;
   border-radius: .5rem;
   background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/fondo-madera.jpg);
   background-position: center;
@@ -706,10 +560,10 @@ html,body {
   text-align: center;
   font-size: 4rem;
   text-transform: uppercase;
-  margin: 1em auto;
+  margin: .5em auto 1em auto;
 }
 
-.pricelist .price-line {
+.price-line {
   width: 100%;
   height: 5rem;
   margin: 0 auto;
@@ -720,10 +574,8 @@ html,body {
   align-items: flex-end;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 850px) {
   .services-section {
-    height: auto;
-    width: 100%;
     padding: 5em 0 0 0;
   }
 
@@ -733,44 +585,30 @@ html,body {
     margin: 2em 0 1.5em 0;
   }
 
-  .services-section .services-icons {
+  .services-icons {
     width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     margin: 0;
     padding: 0;
   }
 
-  .services-section .services-icons .icon-single {
-    width: 18em;
+  .icon-single {
     padding: .5em;
     margin: 1em auto;
     border-radius: 1em;
   }
 
-  .services-section .services-icons .icon-single img {
+  .icon-single img {
     width: 60%;
   }
 
-  .services-section .services-icons .icon-single span {
-    font-size: 2.2rem;
-    line-height: 3rem;
+  .icon-single span {
     padding: .5em;
     display: block;
   }
 
-  .services-section .services-pricing {
-    width: 100%;
-  }
-
-  .drawing1, .drawing2 {
-    display: none;
-  }
-
   .pricelist {
-    width: 90%;
-    height: auto;
     border-radius: 1.5rem;
     margin: 6em auto 14em auto;
     padding-bottom: 3em;
@@ -781,58 +619,61 @@ html,body {
     margin: 1em auto;
   }
 
-  .pricelist .price-line {
+  .price-line {
     width: 100%;
     height: 8rem;
     font-size: 3rem;
   }
+}
 
-  .drawing2 {
-    display: none;
+@media only screen and (max-width: 500px) {
+  .services-icons {
+    flex-direction: column;
+  }
+
+  .icon-single {
+    width: 18em;
+  }
+
+  .icon-single span {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  .services-pricing {
+    width: 100%;
+  }
+
+  .pricelist {
+    width: 90%;
   }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
   .services-section {
-    height: auto;
-    width: 100%;
-    padding: 5em 0 0 0;
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-action.jpg);
+    background-size: cover;
+    background-position: center;
   }
 
   .services-section h2 {
-    font-size: 5rem;
-    text-align: center;
-    margin: 2.5em 0 1.5em 0;
+    margin-top: 2.5em;
   }
 
-  .services-section .services-icons {
-    width: 100%;
-    display: flex;
+  .services-icons {
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 0 auto;
-    padding: 0;
   }
 
-  .services-section .services-icons .icon-single {
+  .icon-single {
     width: 14em;
-    padding: .5em;
-    margin: 1em auto;
-    border-radius: 1em;
   }
 
-  .services-section .services-icons .icon-single img {
-    width: 60%;
-  }
-
-  .services-section .services-icons .icon-single span {
+  .icon-single span {
     font-size: 2rem;
     line-height: 2rem;
-    padding: .5em;
-    display: block;
   }
 
-  .services-section .services-pricing {
+  .services-pricing {
     width: 70%;
     margin: 0 auto;
   }
@@ -840,20 +681,6 @@ html,body {
   .pricelist {
     width: 35em;
     height: auto;
-    border-radius: 1.5rem;
-    margin: 6em auto 14em auto;
-    padding-bottom: 3em;
-  }
-
-  .pricelist h3 {
-    font-size: 5rem;
-    margin: 1em auto;
-  }
-
-  .pricelist .price-line {
-    width: 100%;
-    height: 8rem;
-    font-size: 2.5rem;
   }
 }
 
@@ -867,11 +694,11 @@ html,body {
     margin-top: 4em;
   }
 
-  .services-section .services-icons {
+  .services-icons {
     width: 100%;
   }
 
-  .services-section .services-icons .icon-single {
+  .icon-single {
     width: 13em;
   }
 
@@ -883,20 +710,18 @@ html,body {
 .social-section {
   height: auto;
   transform: skewY(5deg);
-  background-color: var(--darkgrey);
-  margin-top: -4em;
-  align-items: center;
+  background-color: var(--lightgrey);
+  margin-top: -4em
 }
 
 .social-content {
-  align-content: center;
   height: 50rem;
   width: 100%;
   transform: skewY(-5deg);
   padding: 2em;
 }
 
-.social-section .social-reviews {
+.social-reviews {
   width: 80%;
   height: auto;
   margin: auto;
@@ -905,39 +730,37 @@ html,body {
   align-items: center;
 }
 
-.social-section .social-reviews .quote-marks {
+.quote-marks {
   font-size: 30rem;
   color: var(--branding);
   height: .2em;
-  margin-top: .05em;
 }
 
-.social-section .social-reviews .review-text {
+.review-text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.social-section .social-reviews p {
+.review-text p {
   font-size: 2.5rem;
-
+  font-family: "Courgette", cursive;
   margin: 3em auto 2em auto;
 }
 
-.social-section .social-reviews .name {
-
-  font-size: 3rem;
-  margin: 1em auto;
-}
-
-.social-section .social-reviews .review-text .stars {
+.stars {
   display: flex;
   justify-content: center;
 }
 
-.social-section .social-reviews svg {
-  color: #FDCC0D;
+.stars svg {
+  color: var(--stars);
   margin: 0 .25em;
+}
+
+.review-text .name {
+  font-size: 3rem;
+  margin: 1em auto;
 }
 
 .prev, .next {
@@ -946,14 +769,13 @@ html,body {
   top: 50%;
   width: auto;
   margin-top: -1em;
-  color: #67A0A6;
+  color: var(--btn-hover-blue);
   font-size: 5rem;
   border-radius: 0 .3rem .3rem 0;
   user-select: none;
   transition: all .2s;
 }
 
-/* Position the "next button" to the right */
 .prev {
   position: absolute;
   left: 2em;
@@ -966,7 +788,8 @@ html,body {
   border-radius: .3rem 0 0 .3rem;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
   transform: scale(1.5);
   color: var(--branding);
 }
@@ -981,62 +804,108 @@ html,body {
   height: 1rem;
   width: 1rem;
   margin: 0 .3em;
-  background-color: #67A0A6;
+  background-color: var(--btn-hover-blue);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: var(--branding);
 }
 
-@media only screen and (max-width: 500px) {
-  .social-section {
-    height: auto;
-  }
-
-  .social-section .social-content {
-    width: 100%;
-    height: 25em;
-    margin: auto;
-    padding: 4em 0;
-  }
-
-  .social-section .social-reviews {
-    width: 90%;
-    height: 100%;
+@media only screen and (max-width: 850px) {
+  .social-reviews {
     padding: 0 1em;
     margin: 0 auto;
   }
 
-  .social-section .social-reviews .review-text {
+  .review-text p {
+    font-size: 2.5rem;
+    margin:  1.5em auto;
+  }
+
+  .stars svg {
+    transform: scale(.7);
+  }
+
+  .review-text .name {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .social-section {
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/logo-shop-back.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .social-content {
+    width: 100%;
+    height: 30em;
+    margin: auto;
+    padding: 3em 0;
+  }
+
+  .social-reviews {
+    width: 90%;
+    height: 100%;
+  }
+
+  .review-text {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .social-section .social-reviews p {
-    font-size: 2rem;
-    margin: 1.5em auto 1em auto;
+  .quote-marks {
+    font-size: 25rem;
   }
 
-  .social-section .social-reviews .name {
-    font-size: 2rem;
-    margin: .5em auto;
+  .review-text .name {
+    margin: 1em auto;
   }
 
-  .social-section .social-reviews .stars {
-    justify-content: space-around;
+  .prev {
+    left: 2em;
+    top: 7em;
   }
 
-  .social-section .social-reviews svg {
-    transform: scale(.5);
-
+  .next {
+    right: 2em;
+    top: 7em;
   }
 
-  .social-section .social-reviews .quote-marks {
+  .dot-container {
+    padding: 0;
+  }
+
+  .dot {
+    height: 5px;
+    width: 5px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 850px) {
+  .social-content {
+    width: 100%;
+    height: 25em;
+    padding: 4em 0;
+  }
+
+  .social-reviews {
+    width: 90%;
+    height: 100%;
+  }
+
+  .quote-marks {
     font-size: 20rem;
+  }
+
+  .review-text .name {
+    margin: .5em auto;
   }
 
   .prev {
@@ -1050,96 +919,56 @@ html,body {
   }
 
   .dot-container {
-    padding: 0;
-  }
-  
-  .dot {
-    width: 5px;
-    height: 5px;
-  }
-}
-
-@media only screen and (min-width: 501px) and (max-width: 850px) {
-  .social-section {
-    height: auto;
+    padding: .7em;
   }
 
-  .social-section .social-content {
-    width: 100%;
-    height: 25em;
-    padding: 4em 0;
-  }
-
-  .social-section .social-reviews {
-    width: 70%;
-    height: 100%;
-    padding: 0 1em;
-    margin: 0 auto;
-  }
-
-  .social-section .social-reviews img {
-    width: 20%;
-  }
-
-  .social-section .social-reviews .quote-marks {
-    font-size: 20rem;
-  }
-
-  .social-section .social-reviews p {
-    font-size: 2.5rem;
-    letter-spacing: .5px;
-  }
-
-  .prev {
-    left: 3em
-  }
-
-  .next {
-    right: 3em;
-  }
-
-  .drawing {
-    display: none;
-  }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
   .social-section {
-    height: 45rem;
+    height: auto;
   }
 
-  .social-section .social-reviews {
+  .social-reviews {
     width: 100%;
   }
 
-  .social-section .social-reviews img {
-    width: 9em;
-  }
-
-  .social-section .social-reviews .quote-marks {
+  .quote-marks {
     font-size: 25rem;
   }
 
-  .social-section .social-reviews p {
-    font-size: 2.5rem;
+  .social-reviews p {
+    font-size: 2rem;
+    width: 80%;
   }
+
+  .social-reviews .name {
+    font-size: 2rem;
+  }
+
   .prev {
-    left: 2em;
+    left: 1em;
+    top: 4em;
   }
 
   .next {
-    right: 2em;
+    right: 1em;
+    top: 4em;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .social-section {
+    transform: skewY(0deg);
   }
 
-  .drawing {
-    transform: scale(.15);
-    top: -21em;
-    left: 50%;
+  .social-content {
+    transform: skewY(0deg);
   }
 }
 
 .social-ig {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/logo-side.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/logo-shop-back.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1153,7 +982,7 @@ html,body {
 
 .social-ig a {
   text-decoration: none;
-  color: #000;
+  color: var(--black);
 }
 
 .social-ig h2 {
@@ -1184,6 +1013,9 @@ html,body {
 @media only screen and (max-width: 500px) {
   .social-ig {
     height: 32em;
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/best-barbers-prize.jpg);
+    background-size: cover;
+    background-position: left;
   }
 
   .ig-content {
@@ -1214,7 +1046,7 @@ html,body {
   align-items: center;
   width: 100%;
   height: auto;
-  background: linear-gradient(rgba(167, 167, 167, .8), rgba(167, 167, 167, .8)) ,url(../src/images/shop-till.jpg);
+  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/barbershop-till.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1222,6 +1054,7 @@ html,body {
 
 .map {
   width: 35%;
+  max-width: 420px;
   height: 40rem;
   background-color: #000;
   margin: 10em 3em 10em auto;
@@ -1229,7 +1062,7 @@ html,body {
 
 .info-text {
   width: 40%;
-  height: 40rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin: 10em auto 10em 3em;
@@ -1262,7 +1095,7 @@ html,body {
   flex-direction: column;
 }
 
-.contact-heading {
+.info-heading {
   font-size: 3.5rem;
   text-transform: uppercase;
   color: var(--branding);
@@ -1271,8 +1104,8 @@ html,body {
 }
 
 .dash-detail {
-  width: 2em;
-  height: .2rem;
+  width: 30px;
+  height: 2px;
   background-color: var(--branding);
   margin: 0 auto;
 }
@@ -1284,29 +1117,52 @@ html,body {
 }
 
 .footnote {
-  padding: 2em;
+  padding: 1.5em 2em 0 2em;
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 850px) {
   .info {
-    display: flex;
     flex-direction: column-reverse;
     align-items: center;
     width: 100%;
     margin-bottom: 0;
-    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/rsz_barbershop-background.jpg);
+    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barbershop-chair-1.jpg);
     background-size: cover;
-
+    background-position: center;
   }
 
+  .contact {
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+  }
+
+  .contact-number {
+    margin-top: 2.5em;
+    font-size: 3rem;
+  }
+
+  .footnote {
+    padding: 2em 0;
+    font-size: 2rem;
+  }
+
+  .map {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
   .info-text {
     width: 80%;
     height: auto;
     margin: 10em auto 5em auto;
   }
 
-  .contact-heading {
+  .info-heading {
     font-size: 5rem;
   }
 
@@ -1317,49 +1173,20 @@ html,body {
     line-height: 5rem;
   }
 
-  .contact {
-    width: 100%;
-    height: 50%;
-    margin: 0 auto;
-  }
-
   .dash-detail {
     width: 3em;
     height: .2rem;
   }
-
-  .contact-number {
-    margin-top: 2.5em;
-    font-size: 3rem;
-  }
-
-  .footnote {
-    padding: 2em 0;
-    font-size: 2rem;
-  }
-
-  .map {
-    width: 100%;
-    margin: 0;
-  }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .info {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
   .info-text {
     width: 70%;
     height: auto;
     margin: 6em auto;
   }
 
-  .contact-heading {
+  .info-heading {
     font-size: 4rem;
   }
 
@@ -1370,30 +1197,9 @@ html,body {
     line-height: 5rem;
   }
 
-  .contact {
-    width: 100%;
-    height: 50%;
-    margin: 0 auto;
-  }
-
   .dash-detail {
     width: 3em;
     height: .4rem;
-  }
-
-  .contact-number {
-    margin-top: 2.5em;
-    font-size: 3rem;
-  }
-
-  .footnote {
-    padding: 2em 0;
-    font-size: 2rem;
-  }
-
-  .map {
-    width: 100%;
-    margin: 0;
   }
 }
 
@@ -1402,33 +1208,30 @@ footer {
   flex-direction: column;
 }
 
-footer .copy {
+.copy {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #000;
   color: var(--lightgrey);
+  padding-bottom: 1em;
 }
 
-footer .foot-logo {
-  width: 20rem;
-  margin-bottom: 1em;
-}
-
-footer .copy .copy-social {
+.copy-social {
   text-align: center;
   display: flex;
   align-items: center;
   margin: 2em auto 1em auto;
 }
 
-footer .copy .copy-social svg {
+.copy-social svg {
   color: var(--branding);
   margin: 0 .5em;
 }
 
-footer .copy:last-child {
-  padding-bottom: 1em;
+.foot-logo {
+  width: 20rem;
+  margin-bottom: 1em;
 }
 
 @media only screen and (max-width: 500px) {
