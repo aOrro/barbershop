@@ -1043,10 +1043,6 @@ body {
     margin: 0 10px;
   }
 
-  .links-sm a img {
-    width: 110%;
-  }
-
   .links-sm img:hover {
     transform: none;
   }
