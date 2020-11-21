@@ -1025,18 +1025,17 @@ body {
 }
 
 @media only screen and (max-width: 500px) {
-  .social-ig {
-    height: 32em;
+  .social-section {
     background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-tooting-sw.jpg);
     background-size: cover;
     background-position: left;
   }
 
-  .ig-content {
+  .social-content {
     padding-top: 11em;
   }
 
-  .social-ig h2 {
+  .social-content h2 {
     font-size: 2.5rem;
   }
 
@@ -1054,15 +1053,11 @@ body {
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .social-ig {
-    height: 34em;
-  }
-
-  .ig-content {
+  .social-content {
     padding-top: 11em;
   }
 
-  .social-ig h2 {
+  .social-content h2 {
     font-size: 4rem;
   }
 }
