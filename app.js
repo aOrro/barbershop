@@ -13,7 +13,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("social-reviews");
+  let slides = document.getElementsByClassName("review-block");
   let dots = document.getElementsByClassName("dot");
 
   if (n > slides.length) {
@@ -96,4 +96,3 @@ function autoSlide() {
 }
 
 //Slide Images About Section END
-
