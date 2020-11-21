@@ -2,10 +2,10 @@
 
 
 :root {
-  --branding: #003f4d; /*#00454d;/*#03626b*/
+  --branding: #003f4d;
   --darkgrey: #a7a7a7;
   --lightgrey: #d1d1d1;
-  --btn-hover-blue: #1C7179;
+  --btn-hover-blue: #4c7882;
   --stars: #FDCC0D;
   --white: #fff;
   --black: #000;
@@ -54,7 +54,7 @@ body {
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-look.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barber-tooting-sw-shop.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -104,13 +104,22 @@ body {
 }
 
 .nav-social {
-  margin: 0 1em;
+  margin: 0 .5em 0 1em;
   display: flex;
+  align-items: center;
 }
 
-.nav-social svg {
-  margin: .5em .25em;
-  color: var(--lightgrey);
+.nav-social a {
+  margin: 3px 1.5px;
+}
+
+.nav-social a img {
+  width: 80%;
+  transition: all .3s;
+}
+
+.nav-social img:hover {
+  transform: scale(1.2);
 }
 
 .hamburger-menu {
@@ -179,9 +188,13 @@ body {
     font-size: 40%;
   }
 
+  .showcase {
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barber-tooting-sw.jpg);
+  }
+
   .nav-links {
     height: 70vh;
-    padding: 10em 3em;
+    padding: 8em 3em 5em 3em;
   }
 }
 
@@ -191,7 +204,7 @@ body {
   }
 
   .showcase {
-    height: 110vh;
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barber-tooting-sw-shop.jpg);
   }
 
   .nav-links {
@@ -208,7 +221,6 @@ body {
 @media only screen and (max-width: 850px) {
   .showcase {
     height: 110vh;
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-look.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -344,7 +356,7 @@ body {
 }
 
 .active {
-  background-color: var(--darkgrey);
+  background-color: var(--lightgrey);
 }
 
 .fade {
@@ -392,7 +404,7 @@ body {
 
 @media only screen and (max-width: 850px) {
   .about-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/best-barbers-prize.jpg);
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/award-winners-tooting.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -490,7 +502,7 @@ body {
 }
 
 .services-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-action.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-barbers-haircut-shave.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -520,7 +532,7 @@ body {
   margin: .5em;
   text-align: left;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/fondo-madera.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/best-tooting-barber.jpg);
   background-position: center;
   transition: all .2s;
 }
@@ -552,7 +564,7 @@ body {
   height: auto;
   padding: 2em 1em;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/fondo-madera.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/best-tooting-barber.jpg);
   background-position: center;
 }
 
@@ -574,7 +586,68 @@ body {
   align-items: flex-end;
 }
 
+@media only screen and (max-width: 500px) {
+  .services-icons {
+    flex-direction: column;
+  }
+
+  .icon-single {
+    width: 18em;
+  }
+
+  .icon-single span {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  .services-pricing {
+    width: 100%;
+  }
+
+  .pricelist {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 850px) {
+  .services-section {
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-barbers-haircut-shave.jpg);
+  }
+
+  .services-section h2 {
+    margin-top: 2.5em;
+  }
+
+  .services-icons {
+    flex-wrap: wrap;
+  }
+
+  .icon-single {
+    width: 14em;
+  }
+
+  .icon-single span {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .services-pricing {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .pricelist {
+    width: 35em;
+    height: auto;
+  }
+}
+
 @media only screen and (max-width: 850px) {
+  .services-section {
+    background-size: cover;
+    background-position: center;
+  }
+
   .services-section {
     padding: 5em 0 0 0;
   }
@@ -626,64 +699,6 @@ body {
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .services-icons {
-    flex-direction: column;
-  }
-
-  .icon-single {
-    width: 18em;
-  }
-
-  .icon-single span {
-    font-size: 2.2rem;
-    line-height: 3rem;
-  }
-
-  .services-pricing {
-    width: 100%;
-  }
-
-  .pricelist {
-    width: 90%;
-  }
-}
-
-@media only screen and (min-width: 501px) and (max-width: 850px) {
-  .services-section {
-    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-action.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .services-section h2 {
-    margin-top: 2.5em;
-  }
-
-  .services-icons {
-    flex-wrap: wrap;
-  }
-
-  .icon-single {
-    width: 14em;
-  }
-
-  .icon-single span {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-
-  .services-pricing {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .pricelist {
-    width: 35em;
-    height: auto;
-  }
-}
-
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
   .services-section {
     padding: 5em 0;
@@ -707,21 +722,21 @@ body {
   }
 }
 
-.social-section {
+.reviews-section {
   height: auto;
   transform: skewY(5deg);
   background-color: var(--lightgrey);
   margin-top: -4em
 }
 
-.social-content {
+.reviews-content {
   height: 50rem;
   width: 100%;
   transform: skewY(-5deg);
   padding: 2em;
 }
 
-.social-reviews {
+.review-block {
   width: 80%;
   height: auto;
   margin: auto;
@@ -815,41 +830,21 @@ body {
   background-color: var(--branding);
 }
 
-@media only screen and (max-width: 850px) {
-  .social-reviews {
-    padding: 0 1em;
-    margin: 0 auto;
-  }
-
-  .review-text p {
-    font-size: 2.5rem;
-    margin:  1.5em auto;
-  }
-
-  .stars svg {
-    transform: scale(.7);
-  }
-
-  .review-text .name {
-    font-size: 2.5rem;
-  }
-}
-
 @media only screen and (max-width: 500px) {
-  .social-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/logo-shop-back.jpg);
+  .reviews-section {
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/barbershop-tooting-sw.jpg);
     background-size: cover;
     background-position: center;
   }
 
-  .social-content {
+  .reviews-content {
     width: 100%;
     height: 30em;
     margin: auto;
     padding: 3em 0;
   }
 
-  .social-reviews {
+  .review-block {
     width: 90%;
     height: 100%;
   }
@@ -889,13 +884,13 @@ body {
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .social-content {
+  .reviews-content {
     width: 100%;
     height: 25em;
     padding: 4em 0;
   }
 
-  .social-reviews {
+  .review-block {
     width: 90%;
     height: 100%;
   }
@@ -921,15 +916,30 @@ body {
   .dot-container {
     padding: .7em;
   }
+}
 
+@media only screen and (max-width: 850px) {
+  .review-block {
+    padding: 0 1em;
+    margin: 0 auto;
+  }
+
+  .review-text p {
+    font-size: 2.5rem;
+    margin:  1.5em auto;
+  }
+
+  .stars svg {
+    transform: scale(.7);
+  }
+
+  .review-text .name {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .social-section {
-    height: auto;
-  }
-
-  .social-reviews {
+  .reviews-block {
     width: 100%;
   }
 
@@ -937,12 +947,12 @@ body {
     font-size: 25rem;
   }
 
-  .social-reviews p {
+  .review-text p {
     font-size: 2rem;
     width: 80%;
   }
 
-  .social-reviews .name {
+  .review-text .name {
     font-size: 2rem;
   }
 
@@ -958,17 +968,17 @@ body {
 }
 
 @media only screen and (min-width: 1500px) {
-  .social-section {
+  .reviews-section {
     transform: skewY(0deg);
   }
 
-  .social-content {
+  .reviews-content {
     transform: skewY(0deg);
   }
 }
 
-.social-ig {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/logo-shop-back.jpg);
+.social-section {
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-tooting-sw-logo.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -976,44 +986,48 @@ body {
   margin-top: -4em;
 }
 
-.ig-content {
+.social-content {
   padding-top: 9em;
-}
-
-.social-ig a {
-  text-decoration: none;
-  color: var(--black);
-}
-
-.social-ig h2 {
   text-align: center;
-  font-size: 5rem;
+  padding-bottom: 2em;
+}
+
+.social-content a {
+  text-decoration: none;
+}
+
+.social-content h2 {
+  text-align: center;
+  font-size: 3rem;
   text-transform: uppercase;
   color: var(--lightgrey);
   padding: 1.25em;
 }
 
-
-.social-ig .social-ig-images {
+.links-sm {
+  color: var(--branding);
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-ig .social-ig-images .ig-img img {
-  width: 22rem;
-  border-radius: .5rem;
-  transition: all .2s;
+.links-sm a {
+  margin: 0 15px;
 }
 
-.ig-img img:hover {
-  border: .5rem solid var(--branding);
+.links-sm a img {
+  width: 150%;
+  transition: all .3s;
+}
+
+.links-sm img:hover {
+  transform: scale(1.2);
 }
 
 @media only screen and (max-width: 500px) {
   .social-ig {
     height: 32em;
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/best-barbers-prize.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-tooting-sw.jpg);
     background-size: cover;
     background-position: left;
   }
@@ -1023,7 +1037,19 @@ body {
   }
 
   .social-ig h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .links-sm a {
+    margin: 0 10px;
+  }
+
+  .links-sm a img {
+    width: 110%;
+  }
+
+  .links-sm img:hover {
+    transform: none;
   }
 }
 
@@ -1046,7 +1072,7 @@ body {
   align-items: center;
   width: 100%;
   height: auto;
-  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/barbershop-till.jpg);
+  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/barbershop-open-tooting.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1121,40 +1147,6 @@ body {
   font-size: 1.5rem;
 }
 
-@media only screen and (max-width: 850px) {
-  .info {
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barbershop-chair-1.jpg);
-    background-size: cover;
-    background-position: center;
-  }
-
-  .contact {
-    width: 100%;
-    height: 50%;
-    margin: 0 auto;
-  }
-
-  .contact-number {
-    margin-top: 2.5em;
-    font-size: 3rem;
-  }
-
-  .footnote {
-    padding: 2em 0;
-    font-size: 2rem;
-  }
-
-  .map {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-}
-
 @media only screen and (max-width: 500px) {
   .info-text {
     width: 80%;
@@ -1203,6 +1195,40 @@ body {
   }
 }
 
+@media only screen and (max-width: 850px) {
+  .info {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0;
+    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barber-sw-tooting.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .contact {
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+  }
+
+  .contact-number {
+    margin-top: 2.5em;
+    font-size: 3rem;
+  }
+
+  .footnote {
+    padding: 2em 0;
+    font-size: 2rem;
+  }
+
+  .map {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
 footer {
   display: flex;
   flex-direction: column;
@@ -1221,17 +1247,30 @@ footer {
   text-align: center;
   display: flex;
   align-items: center;
-  margin: 2em auto 1em auto;
+  margin: 2.5em auto 1em auto;
 }
 
-.copy-social svg {
-  color: var(--branding);
+.copy-social a {
   margin: 0 .5em;
+}
+
+.copy-social a img {
+  transform: scale(120%);
+  transition: all .3s;
+}
+
+.copy-social a img:hover {
+  transform: scale(1.2);
 }
 
 .foot-logo {
   width: 20rem;
   margin-bottom: 1em;
+}
+
+.author {
+  text-decoration: none;
+  color: var(--btn-hover-blue);
 }
 
 @media only screen and (max-width: 500px) {
