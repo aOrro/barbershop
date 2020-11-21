@@ -1040,11 +1040,11 @@ body {
   }
 
   .links-sm a {
-    margin: 0 10px;
+    margin: 0 5px;
   }
   
   .links-sm a img {
-    width: 60%;
+    width: 50%;
   }
 
   .links-sm img:hover {
@@ -1156,7 +1156,7 @@ body {
   .timetable {
     width: 80%;
     margin: 2em auto;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     line-height: 5rem;
   }
 
