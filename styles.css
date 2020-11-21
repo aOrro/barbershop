@@ -1040,11 +1040,11 @@ body {
   }
 
   .links-sm a {
-    margin: 0 5px;
+    margin: 0 3px;
   }
   
   .links-sm a img {
-    width: 50%;
+    width: 40%;
   }
 
   .links-sm img:hover {
