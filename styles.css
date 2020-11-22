@@ -56,7 +56,7 @@ body {
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barber-tooting-sw-shop.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/barber-tooting-sw-shop.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -191,7 +191,7 @@ body {
   }
 
   .showcase {
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barber-tooting-sw.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/barber-tooting-sw.jpg);
   }
 
   .nav-links {
@@ -980,7 +980,7 @@ body {
 }
 
 .social-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-tooting-sw-logo.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-tooting-sw-logo.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
