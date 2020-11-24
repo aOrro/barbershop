@@ -1,20 +1,3 @@
-
-:root {
-  --branding: #003f4d;
-  --darkgrey: #a7a7a7;
-  --lightgrey: #d1d1d1;
-  --btn-hover-blue: #4c7882;
-  --stars: #FDCC0D;
-  --white: #fff;
-  --black: #000;
-}
-
-@font-face {
-  font-family: Courgette;
-  src: url("font-noir/Courgette-Regular.ttf") format("opentype");
-  font-display: swap;
-}
-
 @font-face {
   font-family: Noir;
   src: url("font-noir/Noir_regular.otf") format("opentype");
@@ -28,6 +11,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: Courgette;
+  src: url("font-noir/Courgette-Regular.ttf") format("opentype");
+  font-display: swap;
+}
+
+
+:root {
+  --branding: #003f4d;
+  --darkgrey: #a7a7a7;
+  --lightgrey: #d1d1d1;
+  --btn-hover-blue: #4c7882;
+  --stars: #FDCC0D;
+  --white: #fff;
+  --black: #000;
+}
 
 
 
