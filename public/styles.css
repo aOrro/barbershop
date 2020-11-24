@@ -1145,9 +1145,27 @@ body {
   text-align: center;
 }
 
+.contact-number a {
+  text-decoration: none;
+  color: var(--branding);
+}
+
+.contact-number a:hover {
+  text-decoration: underline;
+}
+
 .footnote {
   padding: 1.5em 2em 0 2em;
   font-size: 1.5rem;
+}
+
+.footnote a {
+  text-decoration: none;
+  color: var(--branding);
+}
+
+.footnote a:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 500px) {
