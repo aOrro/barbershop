@@ -1,19 +1,19 @@
 @font-face {
   font-family: Noir;
-  src: url("font-noir/Noir_regular.otf") format("opentype");
+  src: url("./fonts/Noir_regular.otf") format("opentype");
   font-display: swap;
 }
 
 @font-face {
   font-family: Noir;
   font-weight: bold;
-  src: url("font-noir/Noir_medium.otf") format("opentype");
+  src: url("./fonts/Noir_medium.otf") format("opentype");
   font-display: swap;
 }
 
 @font-face {
   font-family: Courgette;
-  src: url("font-noir/Courgette-Regular.ttf") format("opentype");
+  src: url("./fonts/Courgette-Regular.ttf") format("opentype");
   font-display: swap;
 }
 
@@ -57,7 +57,7 @@ body {
 
 .showcase {
   height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/barber-tooting-sw-shop.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/barber-tooting-sw-shop.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -192,7 +192,7 @@ body {
   }
 
   .showcase {
-    background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/barber-tooting-sw.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/barber-tooting-sw.jpg);
   }
 
   .nav-links {
@@ -207,11 +207,11 @@ body {
   }
 
   .showcase {
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barber-tooting-sw-shop.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barber-tooting-sw-shop.jpg);
   }
 
   .nav-links {
-    height: 40vh;
+    height: 60vh;
     padding: 6em 3em;
     width: 35%;
   }
@@ -286,6 +286,12 @@ body {
     margin: 1.5em;
     padding: 1em 1em;
     border-radius: .3em;
+  }
+}
+
+@media only screen and (min-width: 851px) and (max-width: 1050px) {
+  .nav-links {
+    width: 60%;
   }
 }
 
@@ -401,13 +407,14 @@ body {
 
 .about-text p {
   font-size: 2rem;
+  line-height: 3rem;
   padding-top: 3em;
   width: 90%
 }
 
 @media only screen and (max-width: 850px) {
   .about-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/award-winners-tooting.jpg);
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(./src/images/award-winners-tooting.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -471,8 +478,8 @@ body {
   }
 
   .about-text p {
-    font-size: 3rem;
-    line-height: 3.5rem;
+    font-size: 3.5rem;
+    line-height: 4rem;
   }
 }
 
@@ -505,7 +512,7 @@ body {
 }
 
 .services-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-barbers-haircut-shave.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-barbers-haircut-shave.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -535,7 +542,7 @@ body {
   margin: .5em;
   text-align: left;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/best-tooting-barber.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/best-tooting-barber.jpg);
   background-position: center;
   transition: all .2s;
 }
@@ -551,6 +558,7 @@ body {
 
 .icon-single span {
   padding: 0 .5em;
+  line-height: 2.5rem;
   display: block;
 }
 
@@ -567,7 +575,7 @@ body {
   height: auto;
   padding: 2em 1em;
   border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(../src/images/best-tooting-barber.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/best-tooting-barber.jpg);
   background-position: center;
 }
 
@@ -614,7 +622,7 @@ body {
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
   .services-section {
-    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-barbers-haircut-shave.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-barbers-haircut-shave.jpg);
   }
 
   .services-section h2 {
@@ -762,6 +770,7 @@ body {
 
 .review-text p {
   font-size: 2.5rem;
+  line-height: 4rem;
   font-family: "Courgette", cursive;
   margin: 3em auto 2em auto;
 }
@@ -835,7 +844,7 @@ body {
 
 @media only screen and (max-width: 500px) {
   .reviews-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(../src/images/barbershop-tooting-sw.jpg);
+    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(./src/images/barbershop-tooting-sw.jpg);
     background-size: cover;
     background-position: center;
   }
@@ -981,7 +990,7 @@ body {
 }
 
 .social-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(../src/images/barbershop-tooting-sw-logo.jpg);
+  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-tooting-sw-logo.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1029,7 +1038,7 @@ body {
 
 @media only screen and (max-width: 500px) {
   .social-section {
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(../src/images/barbershop-open-tooting.jpg);
+    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barbershop-open-tooting.jpg);
     background-size: cover;
     background-position: left;
   }
@@ -1052,7 +1061,7 @@ body {
   }
 
   .links-sm a img {
-    width: 40%;
+    width: 70%;
   }
 
   .links-sm img:hover {
@@ -1075,7 +1084,7 @@ body {
   align-items: center;
   width: 100%;
   height: auto;
-  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(../src/images/barbershop-open-tooting.jpg);
+  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(./src/images/barbershop-open-tooting.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -1222,7 +1231,7 @@ body {
     align-items: center;
     width: 100%;
     margin-bottom: 0;
-    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(../src/images/barber-sw-tooting.jpg);
+    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(./src/images/barber-sw-tooting.jpg);
     background-size: cover;
     background-position: center;
   }

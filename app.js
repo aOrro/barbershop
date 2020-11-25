@@ -1,3 +1,57 @@
+// Burger Menu
+
+const navSlide = () => {
+  const burger = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  burger.addEventListener('click', () => {
+    {passive: true};
+    burger.classList.toggle('no-shadow');
+    nav.classList.toggle('nav-active');
+
+    navLinks.forEach((link, index) => {
+      if(link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade .5s ease forwards ${index / 5 + .2}s`;
+      }
+    });
+    burger.classList.toggle('toggle');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        burger.click();
+        link.style.animation = "";
+      });
+    });
+  });
+}
+
+navSlide();
+
+
+//Slide Images About Section
+
+let slideInd = 0;
+
+const autoSlide = () => {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideInd++;
+  if (slideInd > slides.length) {
+    slideInd = 1
+  }
+  slides[slideInd-1].style.display = "block";
+  setTimeout(autoSlide, 3000);
+}
+
+autoSlide();
+
+//Slide Images About Section END
+
 // Reviews Carousel effect
 
 let slideIndex = 1;
@@ -78,57 +132,3 @@ const lazyLoadMap = (apiKey) => {
 lazyLoadMap('AIzaSyDJ69QaDC8N3m3pM3sF5-wZhan1j4GeUIo');
 
 // Google Location Map END
-
-// Burger Menu
-
-const navSlide = () => {
-  const burger = document.querySelector('.hamburger-menu');
-  const nav = document.querySelector('.nav-links');
-  const navLinks = document.querySelectorAll('.nav-links li');
-
-  burger.addEventListener('click', () => {
-    {passive: true};
-    burger.classList.toggle('no-shadow');
-    nav.classList.toggle('nav-active');
-
-    navLinks.forEach((link, index) => {
-      if(link.style.animation) {
-        link.style.animation = '';
-      } else {
-        link.style.animation = `navLinkFade .5s ease forwards ${index / 5 + .2}s`;
-      }
-    });
-    burger.classList.toggle('toggle');
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        burger.click();
-        link.style.animation = "";
-      });
-    });
-  });
-}
-
-navSlide();
-
-
-//Slide Images About Section
-
-let slideInd = 0;
-
-const autoSlide = () => {
-  let i;
-  const slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideInd++;
-  if (slideInd > slides.length) {
-    slideInd = 1
-  }
-  slides[slideInd-1].style.display = "block";
-  setTimeout(autoSlide, 3000);
-}
-
-autoSlide();
-
-//Slide Images About Section END
