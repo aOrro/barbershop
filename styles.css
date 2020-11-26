@@ -1061,14 +1061,15 @@ body {
   }
 
   .links-sm a {
-    margin: 0 20px;
+    margin: 10px 20px;
   }
 
   .links-sm a img {
     transform:scale(2);
   }
 
-  .links-sm img:hover {
+  .links-sm img:hover,
+  .links-sm img:after {
     transform: none;
   }
 }
