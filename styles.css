@@ -1061,11 +1061,11 @@ body {
   }
 
   .links-sm a {
-    margin: 0 10px;
+    margin: 0 20px;
   }
 
   .links-sm a img {
-    transform:scale(1.5);
+    transform:scale(2);
   }
 
   .links-sm img:hover {

@@ -103,8 +103,8 @@ function myMap() {
   });
 }
 
-const lazyLoadMap = (apiKey) => {
-  if (apiKey) {
+const lazyLoadMap = (api_key) => {
+  if (api_key) {
     let options = {
       rootMargin: '200px',
       threshold: 0,
