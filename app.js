@@ -94,7 +94,7 @@ function myMap() {
   let shopLocation = {lat: 51.435400, lng: -0.159940}
   let mapInfo = {
     center: new google.maps.LatLng(shopLocation),
-    zoom: 5,
+    zoom: 15,
   };
   let map = new google.maps.Map(document.getElementById('googleMap'),mapInfo);
   let marker = new google.maps.Marker({
