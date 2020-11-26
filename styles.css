@@ -1013,7 +1013,7 @@ body {
 
 .social-content h2 {
   text-align: center;
-  font-size: 5rem;
+  font-size: 4rem;
   text-transform: uppercase;
   color: var(--lightgrey);
   padding: 1.25em;
@@ -1143,7 +1143,7 @@ body {
   text-transform: uppercase;
   color: var(--branding);
   text-align: center;
-  margin: .3em;
+  margin: .1em .3em;
 }
 
 .dash-detail {
@@ -1159,28 +1159,32 @@ body {
   text-align: center;
 }
 
-.contact-number a {
+.contact a {
   text-decoration: none;
   color: var(--branding);
 }
 
-.contact-number a:hover {
+.contact a:hover {
   text-decoration: underline;
 }
 
-.footnote {
-  padding: 1.5em 2em 0 2em;
+.email {
+  margin-top: 1em;
   font-size: 1.5rem;
+  text-align: center;
 }
 
-.footnote a {
-  text-decoration: none;
-  color: var(--branding);
+.email a {
+  font-size: 1.6rem;
 }
 
-.footnote a:hover {
-  text-decoration: underline;
+address {
+  margin-top: 1em;
+  font-size: 1.5rem;
+  text-align: center;
 }
+
+
 
 @media only screen and (max-width: 500px) {
   .info-text {
@@ -1250,11 +1254,6 @@ body {
   .contact-number {
     margin-top: 2.5em;
     font-size: 3rem;
-  }
-
-  .footnote {
-    padding: 2em 0;
-    font-size: 2rem;
   }
 
   .map {
