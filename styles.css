@@ -113,11 +113,10 @@ body {
 }
 
 .nav-social a {
-  margin: 3px 1.5px;
+  margin: 3px 4px;
 }
 
 .nav-social a img {
-  width: 80%;
   transition: all .3s;
 }
 
@@ -881,12 +880,12 @@ body {
 
   .prev {
     left: 2em;
-    top: 7em;
+    top: 7.5em;
   }
 
   .next {
     right: 2em;
-    top: 7em;
+    top: 7.5em;
   }
 
   .dot-container {
@@ -998,7 +997,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  height: auto;
+  height: 30em;
   margin-top: -4em;
 }
 
@@ -1014,7 +1013,7 @@ body {
 
 .social-content h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 5rem;
   text-transform: uppercase;
   color: var(--lightgrey);
   padding: 1.25em;
@@ -1028,16 +1027,16 @@ body {
 }
 
 .links-sm a {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 .links-sm a img {
-  width: 150%;
+  transform: scale(2.5);
   transition: all .3s;
 }
 
 .links-sm img:hover {
-  transform: scale(1.2);
+  transform: scale(3);
 }
 
 @media only screen and (max-width: 500px) {
@@ -1045,10 +1044,11 @@ body {
     background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barbershop-open-tooting.jpg);
     background-size: cover;
     background-position: left;
+    height: 25em;
   }
 
   .social-content {
-    padding-top: 11em;
+    padding-top: 10em;
   }
 
   .social-content h2 {
@@ -1061,11 +1061,11 @@ body {
   }
 
   .links-sm a {
-    margin: 0 5px;
+    margin: 0 10px;
   }
 
   .links-sm a img {
-    width: 70%;
+    transform:scale(1.5);
   }
 
   .links-sm img:hover {
@@ -1285,16 +1285,16 @@ footer {
 }
 
 .copy-social a {
-  margin: 0 .5em;
+  margin: 0 1em;
 }
 
 .copy-social a img {
-  transform: scale(120%);
+  transform: scale(1.5);
   transition: all .3s;
 }
 
 .copy-social a img:hover {
-  transform: scale(1.2);
+  transform: scale(1.7);
 }
 
 .foot-logo {
@@ -1310,5 +1310,13 @@ footer {
 @media only screen and (max-width: 500px) {
   footer .copy {
     font-size: 2rem;
+  }
+
+  .copy-social a {
+    margin: 0 .75em;
+  }
+
+  .copy-social a img {
+    transform: scale(1.2);
   }
 }
