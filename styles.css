@@ -871,6 +871,10 @@ body {
     font-size: 25rem;
   }
 
+  .review-text p {
+    line-height: 2.5rem;
+  }
+
   .review-text .name {
     margin: 1em auto;
   }
