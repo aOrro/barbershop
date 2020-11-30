@@ -1280,14 +1280,20 @@ address {
 
 footer {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  background-color: #000;
+  align-items: center;
+}
+
+footer .award-img img {
+  width: 200px;
+  height: auto;
 }
 
 .copy {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000;
   color: var(--lightgrey);
   padding-bottom: 1em;
 }
