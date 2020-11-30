@@ -1247,6 +1247,18 @@ address {
     width: 3em;
     height: .4rem;
   }
+
+  .email {
+    font-size: 2.5rem;
+  }
+
+  .email a {
+    font-size: 2.5rem;
+  }
+
+  address {
+    font-size: 2.5rem;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -1285,7 +1297,7 @@ footer {
   align-items: center;
 }
 
-footer .award-img img {
+.award-img img {
   width: 200px;
   height: auto;
 }
@@ -1329,6 +1341,10 @@ footer .award-img img {
 }
 
 @media only screen and (max-width: 500px) {
+  .award-img img {
+    display: none;
+  }
+
   footer .copy {
     font-size: 2rem;
   }
