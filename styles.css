@@ -286,6 +286,11 @@ body {
     padding: 1em 1em;
     border-radius: .3em;
   }
+
+  .booking-btn:hover {
+    background-color: var(--branding);
+    color: var(--white);
+  }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
@@ -1069,7 +1074,8 @@ body {
   }
 
   .links-sm img:hover,
-  .links-sm img:after {
+  .links-sm img:after,
+  .links-sm img:visited {
     transform: none;
   }
 }
@@ -1355,5 +1361,9 @@ footer {
 
   .copy-social a img {
     transform: scale(1.2);
+  }
+
+  .copy-social a img:hover {
+    transform: none;
   }
 }
