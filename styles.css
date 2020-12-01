@@ -22,7 +22,8 @@
   --branding: #003f4d;
   --darkgrey: #a7a7a7;
   --lightgrey: #d1d1d1;
-  --btn-hover-blue: #4c7882;
+  --btn-hover-blue: #19525e;
+  --clear-blue: #4c7882;
   --stars: #FDCC0D;
   --white: #fff;
   --black: #000;
@@ -835,7 +836,7 @@ body {
   height: 1rem;
   width: 1rem;
   margin: 0 .3em;
-  background-color: var(--btn-hover-blue);
+  background-color: var(--clear-blue);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -1044,6 +1045,7 @@ body {
   transform: scale(3);
 }
 
+
 @media only screen and (max-width: 500px) {
   .social-section {
     background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barbershop-open-tooting.jpg);
@@ -1074,9 +1076,9 @@ body {
   }
 
   .links-sm img:hover,
-  .links-sm img:after,
+  .links-sm img:active,
   .links-sm img:visited {
-    transform: none;
+    transform: scale(2);
   }
 }
 
@@ -1364,6 +1366,6 @@ footer {
   }
 
   .copy-social a img:hover {
-    transform: none;
+    transform: scale(1.2);
   }
 }
