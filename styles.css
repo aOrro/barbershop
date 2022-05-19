@@ -1,1371 +1,1384 @@
 @font-face {
-  font-family: Noir;
-  src: url("./fonts/Noir_regular.otf") format("opentype");
-  font-display: swap;
+    font-family: Noir;
+    src: url('./fonts/Noir_regular.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
-  font-family: Noir;
-  font-weight: bold;
-  src: url("./fonts/Noir_medium.otf") format("opentype");
-  font-display: swap;
+    font-family: Noir;
+    font-weight: bold;
+    src: url('./fonts/Noir_medium.otf') format('opentype');
+    font-display: swap;
 }
 
 @font-face {
-  font-family: Courgette;
-  src: url("./fonts/Courgette-Regular.ttf") format("opentype");
-  font-display: swap;
+    font-family: Courgette;
+    src: url('./fonts/Courgette-Regular.ttf') format('opentype');
+    font-display: swap;
 }
-
 
 :root {
-  --branding: #003f4d;
-  --darkgrey: #a7a7a7;
-  --lightgrey: #d1d1d1;
-  --btn-hover-blue: #19525e;
-  --clear-blue: #4c7882;
-  --stars: #FDCC0D;
-  --white: #fff;
-  --black: #000;
+    --branding: #003f4d;
+    --darkgrey: #a7a7a7;
+    --lightgrey: #d1d1d1;
+    --btn-hover-blue: #19525e;
+    --clear-blue: #4c7882;
+    --stars: #fdcc0d;
+    --white: #fff;
+    --black: #000;
 }
 
-
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-size: 1.6rem;
-  font-family: 'Noir', sans-serif;
-  background-color: var(--lightgrey);
+    font-size: 1.6rem;
+    font-family: 'Noir', sans-serif;
+    background-color: var(--lightgrey);
 }
 
-
-
-
-
 .showcase {
-  height: 120vh;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/barber-tooting-sw-shop.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+    height: 120vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(./src/images/barber-tooting-sw-shop.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .nav-bar {
-  width: 100%;
-  height: 8rem;
-  top: 0;
-  background-color: var(--branding);
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  z-index: 10;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+    width: 100%;
+    height: 8rem;
+    top: 0;
+    background-color: var(--branding);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 10;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
 }
 
 .nav-logo {
-  width: 14rem;
-  margin: auto .5rem;
+    width: 14rem;
+    margin: auto 0.5rem;
 }
 
 .nav-links {
-  display: flex;
-  justify-content: space-around;
-  width: 50%;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
 }
 
 .nav-links li {
-  margin-bottom: .5em;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: .2em;
-  list-style: none;
-  transition: all .3s;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+    list-style: none;
+    transition: all 0.3s;
 }
 
 .nav-links a {
-  color: var(--lightgrey);
-  text-decoration: none;
+    color: var(--lightgrey);
+    text-decoration: none;
 }
 
 .nav-links li:hover,
 .nav-links li:focus {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .nav-social {
-  margin: 0 .5em 0 1em;
-  display: flex;
-  align-items: center;
+    margin: 0 0.5em 0 1em;
+    display: flex;
+    align-items: center;
 }
 
 .nav-social a {
-  margin: 3px 4px;
+    margin: 3px 4px;
 }
 
 .nav-social a img {
-  transition: all .3s;
+    transition: all 0.3s;
 }
 
 .nav-social img:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .hamburger-menu {
-  display: none;
-  cursor: pointer;
-  background-color: var(--branding);
-  position: fixed;
-  margin: 1.5em;
-  padding: 16px 12px;
-  top: 0;
-  right: 0;
-  border-radius: 100%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+    display: none;
+    cursor: pointer;
+    background-color: var(--branding);
+    position: fixed;
+    margin: 1.5em;
+    padding: 16px 12px;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
 }
 
 .hamburger-menu div {
-  width: 25px;
-  height: 2px;
-  margin: 5px;
-  background-color: var(--lightgrey);
-  transition: all .5s ease;
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    background-color: var(--lightgrey);
+    transition: all 0.5s ease;
 }
 
 .showcase-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
 }
 
 .showcase-text h1 {
-  font-size: 6rem;
-  color: var(--lightgrey);
+    font-size: 6rem;
+    color: var(--lightgrey);
 }
 
 .booking-btn {
-  text-transform: uppercase;
-  text-align: center;
-  text-decoration: none;
-  font-size: 2rem;
-  letter-spacing: .05em;
-  margin: 2em;
-  padding: 1em 1em;
-  display: inline-block;
-  border-radius: .5rem;
-  background-color: var(--branding);
-  color: var(--lightgrey);
-  transition: all .2s;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    margin: 2em;
+    padding: 1em 1em;
+    display: inline-block;
+    border-radius: 0.5rem;
+    background-color: var(--branding);
+    color: var(--lightgrey);
+    transition: all 0.2s;
 }
 
 .booking-btn:hover {
-  background-color: var(--btn-hover-blue);
-  color: var(--white);
+    background-color: var(--btn-hover-blue);
+    color: var(--white);
 }
 
-
 @media only screen and (max-width: 500px) {
-  :root {
-    --branding: #00364d;
-  }
+    :root {
+        --branding: #00364d;
+    }
 
-  html {
-    font-size: 40%;
-  }
+    html {
+        font-size: 40%;
+    }
 
-  .showcase {
-    background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/barber-tooting-sw.jpg);
-  }
+    .showcase {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+            url(./src/images/barber-tooting-sw.jpg);
+    }
 
-  .nav-links {
-    height: 70vh;
-    padding: 8em 3em 5em 3em;
-  }
+    .nav-links {
+        height: 70vh;
+        padding: 8em 3em 5em 3em;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  html {
-    font-size: 50%;
-  }
+    html {
+        font-size: 50%;
+    }
 
-  .showcase {
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barber-tooting-sw-shop.jpg);
-  }
+    .showcase {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+            url(./src/images/barber-tooting-sw-shop.jpg);
+    }
 
-  .nav-links {
-    height: 60vh;
-    padding: 6em 3em;
-    width: 35%;
-  }
+    .nav-links {
+        height: 60vh;
+        padding: 6em 3em;
+        width: 35%;
+    }
 
-  .hamburger-menu {
-    margin: 2em;
-  }
+    .hamburger-menu {
+        margin: 2em;
+    }
 }
 
 @media only screen and (max-width: 850px) {
-  .showcase {
-    height: 110vh;
-    background-size: cover;
-    background-position: center;
-  }
+    .showcase {
+        height: 110vh;
+        background-size: cover;
+        background-position: center;
+    }
 
-  .nav-bar {
-    justify-content: space-around;
-    background: transparent;
-    box-shadow: none;
-  }
+    .nav-bar {
+        justify-content: space-around;
+        background: transparent;
+        box-shadow: none;
+    }
 
-  .nav-logo {
-    width: 15em;
-    position: fixed;
-    top: 1em;
-    left: 1em;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  }
+    .nav-logo {
+        width: 15em;
+        position: fixed;
+        top: 1em;
+        left: 1em;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    }
 
-  .nav-links {
-    top: 0;
-    right: 0;
-    position: fixed;
-    padding-top: 8rem;
-    background-color: var(--branding);
-    border-bottom-left-radius: 3rem;
-    flex-direction: column;
-    text-align: left;
-    transform: translateX(100%);
-    transition: transform .2s ease-in;
-  }
+    .nav-links {
+        top: 0;
+        right: 0;
+        position: fixed;
+        padding-top: 8rem;
+        background-color: var(--branding);
+        border-bottom-left-radius: 1rem;
+        flex-direction: column;
+        text-align: left;
+        transform: translateX(100%);
+        transition: transform 0.2s ease-in;
+    }
 
-  .nav-links li {
-    opacity: 0;
-  }
+    .nav-links li {
+        opacity: 0;
+    }
 
-  .nav-links li a {
-    font-size: 2.5rem ;
-  }
+    .nav-links li a {
+        font-size: 2.5rem;
+    }
 
-  .nav-social {
-    display: none;
-  }
+    .nav-social {
+        display: none;
+    }
 
-  .hamburger-menu {
-    display: block;
-  }
+    .hamburger-menu {
+        display: block;
+    }
 
-  .showcase-text {
-    margin-top: -8rem;
-  }
+    .showcase-text {
+        margin-top: -8rem;
+    }
 
-  .showcase-text h1 {
-    font-size: 6rem;
-    text-align: center;
-  }
+    .showcase-text h1 {
+        font-size: 6rem;
+        text-align: center;
+    }
 
-  .booking-btn {
-    font-size: 2.6rem;
-    letter-spacing: .1em;
-    margin: 1.5em;
-    padding: 1em 1em;
-    border-radius: .3em;
-  }
+    .booking-btn {
+        font-size: 2.6rem;
+        letter-spacing: 0.1em;
+        margin: 1.5em;
+        padding: 1em 1em;
+        border-radius: 0.3em;
+    }
 
-  .booking-btn:hover {
-    background-color: var(--branding);
-    color: var(--white);
-  }
+    .booking-btn:hover {
+        background-color: var(--branding);
+        color: var(--white);
+    }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .nav-links {
-    width: 60%;
-  }
+    .nav-links {
+        width: 60%;
+    }
 }
 
 .nav-active {
-  transform: translateX(0%);
+    transform: translateX(0%);
 }
 
 .no-shadow {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 @keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
 
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .toggle .line1 {
-  transform: rotate(-405deg) translate(-5px, 5px);
+    transform: rotate(-405deg) translate(-5px, 5px);
 }
 
 .toggle .line2 {
-  opacity: 0;
+    opacity: 0;
 }
 
 .toggle .line3 {
-  transform: rotate(405deg) translate(-5px, -5px);
+    transform: rotate(405deg) translate(-5px, -5px);
 }
 
 .about-section {
-  height: auto;
-  transform: skewY(-5deg);
-  position: relative;
-  background-color: var(--lightgrey);
-  margin-top: -4em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: auto;
+    transform: skewY(-5deg);
+    position: relative;
+    background-color: var(--lightgrey);
+    margin-top: -4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-content {
-  transform: skewY(5deg);
-  width: 80%;
-  display: flex;
-  align-items: center;
-  padding-top: 2.5em;
+    transform: skewY(5deg);
+    width: 80%;
+    display: flex;
+    align-items: center;
+    padding-top: 2.5em;
 }
 
 .about-images {
-  width: 50%;
-  height: 100%;
-  display: inline-block;
+    width: 50%;
+    height: 100%;
+    display: inline-block;
 }
 
 .about-img {
-  width: 80%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .4);
-  border-radius: 5px;
-  margin: 4em;
+    width: 80%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    margin: 4em;
 }
 
 .mySlides {
-  display: none;
-  text-align: center;
+    display: none;
+    text-align: center;
 }
 
 .active {
-  background-color: var(--lightgrey);
+    background-color: var(--lightgrey);
 }
 
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 2s;
-  animation-name: fade;
-  animation-duration: 2s;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
 }
 
 @-webkit-keyframes fade {
-  from {
-    opacity: .4;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fade {
-  from {
-    opacity: .4;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .about-text {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-text h2 {
-  font-size: 6rem;
-  text-transform: uppercase;
+    font-size: 6rem;
+    text-transform: uppercase;
 }
 
 .about-text p {
-  font-size: 2rem;
-  line-height: 3rem;
-  padding-top: 3em;
-  width: 90%
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-top: 3em;
+    width: 90%;
 }
 
 @media only screen and (max-width: 850px) {
-  .about-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(./src/images/winner-barber-award.jpg);
-    background-size: cover;
-    background-position: center;
-  }
+    .about-section {
+        background: linear-gradient(rgba(209, 209, 209, 0.8), rgba(209, 209, 209, 0.8)),
+            url(./src/images/winner-barber-award.jpg);
+        background-size: cover;
+        background-position: center;
+    }
 
-  .about-content {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    margin: auto;
-    padding: 7em 0em;
-  }
+    .about-content {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: auto;
+        padding: 7em 0em;
+    }
 
-  .about-images {
-    width: 100%;
-    padding: 2em 0em;
-  }
+    .about-images {
+        width: 100%;
+        padding: 2em 0em;
+    }
 
-  .about-img {
-    border: .5rem solid var(--branding);
-    border-radius: 5px;
-  }
+    .about-img {
+        border: 0.5rem solid var(--branding);
+        border-radius: 5px;
+    }
 
-  .about-text h2 {
-    font-size: 6rem;
-    text-align: center;
-  }
+    .about-text h2 {
+        font-size: 6rem;
+        text-align: center;
+    }
 
-  .about-text p {
-    padding-top: 2em;
-    margin: 0 auto;
-  }
+    .about-text p {
+        padding-top: 2em;
+        margin: 0 auto;
+    }
 }
 
-
 @media only screen and (max-width: 500px) {
-  .about-img {
-    width: 100%;
-    margin: auto;
-  }
+    .about-img {
+        width: 100%;
+        margin: auto;
+    }
 
-  .about-text {
-    width: 100%;
-    margin: 2rem;
-  }
+    .about-content {
+        width: 90%;
+    }
 
-  .about-text p {
-    font-size: 3rem;
-    letter-spacing: .5px;
-    line-height: 3.5rem;
-  }
+    .about-text {
+        width: 100%;
+        margin: 2rem;
+    }
+
+    .about-text p {
+        font-size: 3rem;
+        letter-spacing: 0.5px;
+        line-height: 3.5rem;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .about-img {
-    width: 80%;
-  }
+    .about-img {
+        width: 80%;
+    }
 
-  .about-text {
-    width: 80%;
-    margin: 1rem auto;
-  }
+    .about-text {
+        width: 80%;
+        margin: 1rem auto;
+    }
 
-  .about-text p {
-    font-size: 3.5rem;
-    line-height: 4rem;
-  }
+    .about-text p {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .about-content {
-    width: 100%;
-  }
+    .about-content {
+        width: 100%;
+    }
 
-  .about-img {
-    width: 70%;
-  }
+    .about-img {
+        width: 70%;
+    }
 
-  .about-text {
-    width: 45%;
-  }
+    .about-text {
+        width: 45%;
+    }
 
-  .about-text h2 {
-    font-size: 6rem;
-  }
+    .about-text h2 {
+        font-size: 6rem;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
-  .about-section {
-    transform: skewY(0deg);
-  }
+    .about-section {
+        transform: skewY(0deg);
+    }
 
-  .about-content {
-    transform: skewY(0deg);
-  }
+    .about-content {
+        transform: skewY(0deg);
+    }
 }
 
 .services-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-barbers-haircut-shave.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  color: var(--lightgrey);
-  padding: 5em 0 12em 0;
-  margin-top: -4em;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        url(./src/images/barbershop-barbers-haircut-shave.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--lightgrey);
+    padding: 5em 0 12em 0;
+    margin-top: -4em;
 }
 
 .services-section h2 {
-  font-size: 6rem;
-  text-transform: uppercase;
-  text-align: center;
-  margin-top: 3em;
+    font-size: 6rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3em;
 }
 
 .services-icons {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin: 5em auto;
-  padding: 2em;
-}
-
-.icon-single {
-  width: 15em;
-  padding: .5em;
-  margin: .5em;
-  text-align: left;
-  border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/best-tooting-barber.jpg);
-  background-position: center;
-  transition: all .2s;
-}
-
-.icon-single img {
-  display: block;
-  width: 70%;
-  margin: 1em auto;
-  padding: .5em;
-  border-radius: 10rem;
-  background-color: var(--darkgrey);
-}
-
-.icon-single span {
-  padding: 0 .5em;
-  line-height: 2.5rem;
-  display: block;
-}
-
-.services-pricing {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.pricelist {
-  width: 40%;
-  max-width: 450px;
-  height: auto;
-  padding: 2em 1em;
-  border-radius: .5rem;
-  background: linear-gradient( rgba(0, 0, 0, .7), rgba(0, 0, 0, .7) ), url(./src/images/best-tooting-barber.jpg);
-  background-position: center;
-}
-
-.pricelist h3 {
-  text-align: center;
-  font-size: 4rem;
-  text-transform: uppercase;
-  margin: .5em auto 1em auto;
-}
-
-.price-line {
-  width: 100%;
-  height: 5rem;
-  margin: 0 auto;
-  padding: 0 .5em;
-  font-size: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-@media only screen and (max-width: 500px) {
-  .services-icons {
-    flex-direction: column;
-  }
-
-  .icon-single {
-    width: 18em;
-  }
-
-  .icon-single span {
-    font-size: 2.2rem;
-    line-height: 3rem;
-  }
-
-  .services-pricing {
-    width: 100%;
-  }
-
-  .pricelist {
-    width: 90%;
-  }
-}
-
-@media only screen and (min-width: 501px) and (max-width: 850px) {
-  .services-section {
-    background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-barbers-haircut-shave.jpg);
-  }
-
-  .services-section h2 {
-    margin-top: 2.5em;
-  }
-
-  .services-icons {
-    flex-wrap: wrap;
-  }
-
-  .icon-single {
-    width: 14em;
-  }
-
-  .icon-single span {
-    font-size: 2rem;
-    line-height: 2rem;
-  }
-
-  .services-pricing {
-    width: 70%;
-    margin: 0 auto;
-  }
-
-  .pricelist {
-    width: 35em;
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .services-section {
-    background-size: cover;
-    background-position: center;
-  }
-
-  .services-section {
-    padding: 5em 0 0 0;
-  }
-
-  .services-section h2 {
-    font-size: 6rem;
-    text-align: center;
-    margin: 2em 0 1.5em 0;
-  }
-
-  .services-icons {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: 0;
-    padding: 0;
-  }
+    margin: 5em auto;
+    padding: 2em;
+}
 
-  .icon-single {
-    padding: .5em;
-    margin: 1em auto;
-    border-radius: 1em;
-  }
+.icon-single {
+    width: 15em;
+    padding: 0.5em;
+    margin: 0.5em;
+    text-align: left;
+    border-radius: 0.5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(./src/images/best-tooting-barber.jpg);
+    background-position: center;
+    transition: all 0.2s;
+}
 
-  .icon-single img {
-    width: 60%;
-  }
-
-  .icon-single span {
-    padding: .5em;
+.icon-single img {
     display: block;
-  }
-
-  .pricelist {
-    border-radius: 1.5rem;
-    margin: 6em auto 14em auto;
-    padding-bottom: 3em;
-  }
-
-  .pricelist h3 {
-    font-size: 6rem;
+    width: 70%;
     margin: 1em auto;
-  }
+    padding: 0.5em;
+    border-radius: 10rem;
+    background-color: var(--darkgrey);
+}
 
-  .price-line {
+.icon-single span {
+    padding: 0 0.5em;
+    line-height: 2.5rem;
+    display: block;
+}
+
+.services-pricing {
     width: 100%;
-    height: 8rem;
-    font-size: 3rem;
-  }
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.pricelist {
+    width: 40%;
+    max-width: 450px;
+    height: auto;
+    padding: 2em 1em;
+    border-radius: 0.5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(./src/images/best-tooting-barber.jpg);
+    background-position: center;
+}
+
+.pricelist h3 {
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0.5em auto 1em auto;
+}
+
+.price-line {
+    width: 100%;
+    height: 5rem;
+    margin: 0 auto;
+    padding: 0 0.5em;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@media only screen and (max-width: 500px) {
+    .services-icons {
+        flex-direction: column;
+    }
+
+    .icon-single {
+        width: 18em;
+    }
+
+    .icon-single span {
+        font-size: 2.2rem;
+        line-height: 3rem;
+    }
+
+    .services-pricing {
+        width: 100%;
+    }
+
+    .pricelist {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 850px) {
+    .services-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+            url(./src/images/barbershop-barbers-haircut-shave.jpg);
+    }
+
+    .services-section h2 {
+        margin-top: 2.5em;
+    }
+
+    .services-icons {
+        flex-wrap: wrap;
+    }
+
+    .icon-single {
+        width: 14em;
+    }
+
+    .icon-single span {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .services-pricing {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .pricelist {
+        width: 35em;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .services-section {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .services-section {
+        padding: 5em 0 0 0;
+    }
+
+    .services-section h2 {
+        font-size: 6rem;
+        text-align: center;
+        margin: 2em 0 1.5em 0;
+    }
+
+    .services-icons {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon-single {
+        padding: 0.5em;
+        margin: 1em auto;
+        border-radius: 1em;
+    }
+
+    .icon-single img {
+        width: 60%;
+    }
+
+    .icon-single span {
+        padding: 0.5em;
+        display: block;
+    }
+
+    .pricelist {
+        border-radius: 1.5rem;
+        margin: 6em auto 14em auto;
+        padding-bottom: 3em;
+    }
+
+    .pricelist h3 {
+        font-size: 6rem;
+        margin: 1em auto;
+    }
+
+    .price-line {
+        width: 100%;
+        height: 8rem;
+        font-size: 3rem;
+    }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .services-section {
-    padding: 5em 0;
-  }
+    .services-section {
+        padding: 5em 0;
+    }
 
-  .services-section h2 {
-    font-size: 5rem;
-    margin-top: 4em;
-  }
+    .services-section h2 {
+        font-size: 5rem;
+        margin-top: 4em;
+    }
 
-  .services-icons {
-    width: 100%;
-  }
+    .services-icons {
+        width: 100%;
+    }
 
-  .icon-single {
-    width: 13em;
-  }
+    .icon-single {
+        width: 13em;
+    }
 
-  .pricelist {
-    width: 25em;
-  }
+    .pricelist {
+        width: 25em;
+    }
 }
 
 .reviews-section {
-  height: auto;
-  transform: skewY(5deg);
-  background-color: var(--lightgrey);
-  margin-top: -4em
+    height: auto;
+    transform: skewY(5deg);
+    background-color: var(--lightgrey);
+    margin-top: -4em;
 }
 
 .reviews-content {
-  height: 50rem;
-  width: 100%;
-  transform: skewY(-5deg);
-  padding: 2em;
+    height: 50rem;
+    width: 100%;
+    transform: skewY(-5deg);
+    padding: 2em;
 }
 
 .review-block {
-  width: 80%;
-  height: auto;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .quote-marks {
-  font-size: 30rem;
-  color: var(--branding);
-  height: .2em;
+    font-size: 30rem;
+    color: var(--branding);
+    height: 0.2em;
 }
 
 .review-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .review-text p {
-  font-size: 2.5rem;
-  line-height: 4rem;
-  font-family: "Courgette", cursive;
-  margin: 3em auto 2em auto;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    font-family: 'Courgette', cursive;
+    margin: 3em auto 2em auto;
 }
 
 .stars {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .stars svg {
-  color: var(--stars);
-  margin: 0 .25em;
+    color: var(--stars);
+    margin: 0 0.25em;
 }
 
 .review-text .name {
-  font-size: 3rem;
-  margin: 1em auto;
+    font-size: 3rem;
+    margin: 1em auto;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -1em;
-  color: var(--btn-hover-blue);
-  font-size: 5rem;
-  border-radius: 0 .3rem .3rem 0;
-  user-select: none;
-  transition: all .2s;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -1em;
+    color: var(--btn-hover-blue);
+    font-size: 5rem;
+    border-radius: 0 0.3rem 0.3rem 0;
+    user-select: none;
+    transition: all 0.2s;
 }
 
 .prev {
-  position: absolute;
-  left: 2em;
-  border-radius: .3rem 0 0 .3rem;
+    position: absolute;
+    left: 2em;
+    border-radius: 0.3rem 0 0 0.3rem;
 }
 
 .next {
-  position: absolute;
-  right: 2em;
-  border-radius: .3rem 0 0 .3rem;
+    position: absolute;
+    right: 2em;
+    border-radius: 0.3rem 0 0 0.3rem;
 }
 
 .prev:hover,
 .next:hover {
-  transform: scale(1.5);
-  color: var(--branding);
+    transform: scale(1.5);
+    color: var(--branding);
 }
 
 .dot-container {
-  text-align: center;
-  padding: 2em;
+    text-align: center;
+    padding: 2em;
 }
 
 .dot {
-  cursor: pointer;
-  height: 1rem;
-  width: 1rem;
-  margin: 0 .3em;
-  background-color: var(--clear-blue);
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0.3em;
+    background-color: var(--clear-blue);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
 .active,
 .dot:hover {
-  background-color: var(--branding);
+    background-color: var(--branding);
 }
 
 @media only screen and (max-width: 500px) {
-  .reviews-section {
-    background: linear-gradient( rgba(209, 209, 209, .8), rgba(209, 209, 209, .8) ), url(./src/images/barbershop-tooting-sw.jpg);
-    background-size: cover;
-    background-position: center;
-  }
+    .reviews-section {
+        background: linear-gradient(rgba(209, 209, 209, 0.8), rgba(209, 209, 209, 0.8)),
+            url(./src/images/barbershop-tooting-sw.jpg);
+        background-size: cover;
+        background-position: center;
+    }
 
-  .reviews-content {
-    width: 100%;
-    height: 30em;
-    margin: auto;
-    padding: 3em 0;
-  }
+    .reviews-content {
+        width: 100%;
+        height: 30em;
+        margin: auto;
+        padding: 3em 0;
+    }
 
-  .review-block {
-    width: 90%;
-    height: 100%;
-  }
+    .review-block {
+        width: 90%;
+        height: 100%;
+    }
 
-  .review-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+    .review-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .quote-marks {
-    font-size: 25rem;
-  }
+    .quote-marks {
+        font-size: 25rem;
+    }
 
-  .review-text p {
-    line-height: 2.8rem;
-  }
+    .review-text p {
+        line-height: 2.8rem;
+    }
 
-  .review-text .name {
-    margin: 1em auto;
-  }
+    .review-text .name {
+        margin: 1em auto;
+    }
 
-  .prev {
-    left: 2em;
-    top: 7.5em;
-  }
+    .prev {
+        left: 2em;
+        top: 7.5em;
+    }
 
-  .next {
-    right: 2em;
-    top: 7.5em;
-  }
+    .next {
+        right: 2em;
+        top: 7.5em;
+    }
 
-  .dot-container {
-    padding: 0;
-  }
+    .dot-container {
+        padding: 0;
+    }
 
-  .dot {
-    height: 5px;
-    width: 5px;
-  }
+    .dot {
+        height: 5px;
+        width: 5px;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .reviews-content {
-    width: 100%;
-    height: 25em;
-    padding: 4em 0;
-  }
+    .reviews-content {
+        width: 100%;
+        height: 25em;
+        padding: 4em 0;
+    }
 
-  .review-block {
-    width: 90%;
-    height: 100%;
-  }
+    .review-block {
+        width: 90%;
+        height: 100%;
+    }
 
-  .quote-marks {
-    font-size: 20rem;
-  }
+    .quote-marks {
+        font-size: 20rem;
+    }
 
-  .review-text .name {
-    margin: .5em auto;
-  }
+    .review-text .name {
+        margin: 0.5em auto;
+    }
 
-  .prev {
-    left: 2em;
-    top: 6em;
-  }
+    .prev {
+        left: 2em;
+        top: 6em;
+    }
 
-  .next {
-    right: 2em;
-    top: 6em;
-  }
+    .next {
+        right: 2em;
+        top: 6em;
+    }
 
-  .dot-container {
-    display: none;
-  }
+    .dot-container {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 850px) {
-  .review-block {
-    padding: 0 1em;
-    margin: 0 auto;
-  }
+    .review-block {
+        padding: 0 1em;
+        margin: 0 auto;
+    }
 
-  .review-text p {
-    font-size: 2.5rem;
-    margin:  1.5em auto;
-  }
+    .review-text p {
+        font-size: 2.5rem;
+        margin: 1.5em auto;
+    }
 
-  .stars svg {
-    transform: scale(.7);
-  }
+    .stars svg {
+        transform: scale(0.7);
+    }
 
-  .review-text .name {
-    font-size: 2.5rem;
-  }
+    .review-text .name {
+        font-size: 2.5rem;
+    }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1050px) {
-  .reviews-block {
-    width: 100%;
-  }
+    .reviews-block {
+        width: 100%;
+    }
 
-  .quote-marks {
-    font-size: 25rem;
-  }
+    .quote-marks {
+        font-size: 25rem;
+    }
 
-  .review-text p {
-    font-size: 2rem;
-    width: 80%;
-  }
+    .review-text p {
+        font-size: 2rem;
+        width: 80%;
+    }
 
-  .review-text .name {
-    font-size: 2rem;
-  }
+    .review-text .name {
+        font-size: 2rem;
+    }
 
-  .prev {
-    left: 1em;
-    top: 4em;
-  }
+    .prev {
+        left: 1em;
+        top: 4em;
+    }
 
-  .next {
-    right: 1em;
-    top: 4em;
-  }
+    .next {
+        right: 1em;
+        top: 4em;
+    }
 }
 
 @media only screen and (min-width: 1500px) {
-  .reviews-section {
-    transform: skewY(0deg);
-  }
+    .reviews-section {
+        transform: skewY(0deg);
+    }
 
-  .reviews-content {
-    transform: skewY(0deg);
-  }
+    .reviews-content {
+        transform: skewY(0deg);
+    }
 }
 
 .social-section {
-  background: linear-gradient( rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) ), url(./src/images/barbershop-tooting-sw-logo.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  height: 30em;
-  margin-top: -4em;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+        url(./src/images/barbershop-tooting-sw-logo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 30em;
+    margin-top: -4em;
 }
 
 .social-content {
-  padding-top: 9em;
-  text-align: center;
-  padding-bottom: 2em;
+    padding-top: 9em;
+    text-align: center;
+    padding-bottom: 2em;
 }
 
 .social-content a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .social-content h2 {
-  text-align: center;
-  font-size: 4rem;
-  text-transform: uppercase;
-  color: var(--lightgrey);
-  padding: 1.25em;
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--lightgrey);
+    padding: 1.25em;
 }
 
 .links-sm {
-  color: var(--branding);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    color: var(--branding);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .links-sm a {
-  margin: 0 20px;
+    margin: 0 20px;
 }
 
 .links-sm a img {
-  transform: scale(2.5);
-  transition: all .3s;
+    transform: scale(2.5);
+    transition: all 0.3s;
 }
 
 .links-sm img:hover {
-  transform: scale(3);
+    transform: scale(3);
 }
 
-
 @media only screen and (max-width: 500px) {
-  .social-section {
-    background: linear-gradient( rgba(0, 0, 0, .8), rgba(0, 0, 0, .8) ), url(./src/images/barbershop-open-tooting.jpg);
-    background-size: cover;
-    background-position: left;
-    height: 25em;
-  }
+    .social-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+            url(./src/images/barbershop-open-tooting.jpg);
+        background-size: cover;
+        background-position: left;
+        height: 25em;
+    }
 
-  .social-content {
-    padding-top: 10em;
-  }
+    .social-content {
+        padding-top: 10em;
+    }
 
-  .social-content h2 {
-    font-size: 2.5rem;
-  }
+    .social-content h2 {
+        font-size: 2.5rem;
+    }
 
-  .links-sm {
-    width: 70%;
-    margin: 0 auto;
-  }
+    .links-sm {
+        width: 70%;
+        margin: 0 auto;
+    }
 
-  .links-sm a {
-    margin: 10px 20px;
-  }
+    .links-sm a {
+        margin: 10px 20px;
+    }
 
-  .links-sm a img {
-    transform:scale(2);
-  }
+    .links-sm a img {
+        transform: scale(2);
+    }
 
-  .links-sm img:hover,
-  .links-sm img:active,
-  .links-sm img:visited {
-    transform: scale(2);
-  }
+    .links-sm img:hover,
+    .links-sm img:active,
+    .links-sm img:visited {
+        transform: scale(2);
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .social-content {
-    padding-top: 11em;
-  }
+    .social-content {
+        padding-top: 11em;
+    }
 
-  .social-content h2 {
-    font-size: 4rem;
-  }
+    .social-content h2 {
+        font-size: 4rem;
+    }
 }
 
 .info {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: auto;
-  background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)) ,url(./src/images/barbershop-open-tooting.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(rgba(209, 209, 209, 0.8), rgba(209, 209, 209, 0.8)),
+        url(./src/images/barbershop-open-tooting.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .map {
-  width: 35%;
-  max-width: 420px;
-  height: 40rem;
-  background-color: #000;
-  margin: 10em 3em 10em auto;
+    width: 35%;
+    max-width: 420px;
+    height: 40rem;
+    background-color: #000;
+    margin: 10em 3em 10em auto;
 }
 
 .info-text {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 10em auto 10em 3em;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 10em auto 10em 3em;
 }
 
 .opening-hours {
-  height: 50%;
+    height: 50%;
 }
 
 .timetable {
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 2em auto;
-  text-transform: uppercase;
-  font-size: 2rem;
-  line-height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 2em auto;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 2.5rem;
 }
 
 .timetable time {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact {
-  width: 90%;
-  height: 50%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+    width: 90%;
+    height: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-heading {
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  color: var(--branding);
-  text-align: center;
-  margin: .1em .3em;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: var(--branding);
+    text-align: center;
+    margin: 0.1em 0.3em;
 }
 
 .dash-detail {
-  width: 30px;
-  height: 2px;
-  background-color: var(--branding);
-  margin: 0 auto;
+    width: 30px;
+    height: 2px;
+    background-color: var(--branding);
+    margin: 0 auto 20px auto;
+}
+
+.contact-numbers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
 }
 
 .contact-number {
-  margin-top: 2em;
-  font-size: 2rem;
-  text-align: center;
+    font-size: 2rem;
 }
 
 .contact a {
-  text-decoration: none;
-  color: var(--branding);
+    text-decoration: none;
+    color: var(--branding);
 }
 
 .contact a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .email {
-  margin-top: 1em;
-  font-size: 1.5rem;
-  text-align: center;
+    margin-top: 1em;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 .email a {
-  font-size: 1.6rem;
+    font-size: 1.6rem;
 }
 
 address {
-  margin-top: 1em;
-  font-size: 1.5rem;
-  text-align: center;
+    margin-top: 1em;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 500px) {
-  .info-text {
-    width: 80%;
-    height: auto;
-    margin: 10em auto 5em auto;
-  }
+    .info-text {
+        width: 80%;
+        height: auto;
+        margin: 10em auto 5em auto;
+    }
 
-  .info-heading {
-    font-size: 5rem;
-  }
+    .info-heading {
+        font-size: 5rem;
+    }
 
-  .timetable {
-    width: 80%;
-    margin: 2em auto;
-    font-size: 2.8rem;
-    line-height: 5rem;
-  }
+    .timetable {
+        width: 80%;
+        margin: 2em auto;
+        font-size: 2.8rem;
+        line-height: 5rem;
+    }
 
-  .dash-detail {
-    width: 3em;
-    height: .2rem;
-  }
+    .dash-detail {
+        width: 3em;
+        height: 0.2rem;
+    }
 
-  .email {
-    margin-top: 1em;
-    font-size: 2.5rem;
-    text-align: center;
-  }
+    .email {
+        margin-top: 1em;
+        font-size: 2.5rem;
+        text-align: center;
+    }
 
-  .email a {
-    font-size: 2.5rem;
-  }
+    .email a {
+        font-size: 2.5rem;
+    }
 
-  address {
-    margin-top: 1em;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    text-align: center;
-  }
+    address {
+        margin-top: 1em;
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 850px) {
-  .info-text {
-    width: 70%;
-    height: auto;
-    margin: 6em auto;
-  }
+    .info-text {
+        width: 70%;
+        height: auto;
+        margin: 6em auto;
+    }
 
-  .info-heading {
-    font-size: 4rem;
-  }
+    .info-heading {
+        font-size: 4rem;
+    }
 
-  .timetable {
-    width: 60%;
-    margin: 3em auto;
-    font-size: 2.5rem;
-    line-height: 5rem;
-  }
+    .timetable {
+        width: 60%;
+        margin: 3em auto;
+        font-size: 2.5rem;
+        line-height: 5rem;
+    }
 
-  .dash-detail {
-    width: 3em;
-    height: .4rem;
-  }
+    .dash-detail {
+        width: 3em;
+        height: 0.4rem;
+    }
 
-  .email {
-    font-size: 2.5rem;
-  }
+    .email {
+        font-size: 2.5rem;
+    }
 
-  .email a {
-    font-size: 2.5rem;
-  }
+    .email a {
+        font-size: 2.5rem;
+    }
 
-  address {
-    font-size: 2.5rem;
-  }
+    address {
+        font-size: 2.5rem;
+    }
 }
 
 @media only screen and (max-width: 850px) {
-  .info {
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-    background: linear-gradient(rgba(209, 209, 209, .8), rgba(209, 209, 209, .8)), url(./src/images/barber-sw-tooting.jpg);
-    background-size: cover;
-    background-position: center;
-  }
+    .info {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0;
+        background: linear-gradient(rgba(209, 209, 209, 0.8), rgba(209, 209, 209, 0.8)),
+            url(./src/images/barber-sw-tooting.jpg);
+        background-size: cover;
+        background-position: center;
+    }
 
-  .contact {
-    width: 100%;
-    height: 50%;
-    margin: 0 auto;
-  }
+    .contact {
+        width: 100%;
+        height: 50%;
+        margin: 0 auto;
+    }
 
-  .contact-number {
-    margin-top: 2.5em;
-    font-size: 3rem;
-  }
+    .contact-number {
+        font-size: 3rem;
+    }
 
-  .map {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
+    .map {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
 }
 
 footer {
-  display: flex;
-  justify-content: space-around;
-  background-color: #000;
-  align-items: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    align-items: center;
 }
 
 .award-img img {
-  width: 200px;
-  height: auto;
+    width: 200px;
+    height: auto;
 }
 
 .copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--lightgrey);
-  padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--lightgrey);
+    padding-bottom: 1em;
 }
 
 .copy-social {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  margin: 2.5em auto 1em auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 2.5em auto 1em auto;
 }
 
 .copy-social a {
-  margin: 0 1em;
+    margin: 0 1em;
 }
 
 .copy-social a img {
-  transform: scale(1.5);
-  transition: all .3s;
+    transform: scale(1.5);
+    transition: all 0.3s;
 }
 
 .copy-social a img:hover {
-  transform: scale(1.7);
+    transform: scale(1.7);
 }
 
 .foot-logo {
-  width: 20rem;
-  margin-bottom: 1em;
+    width: 20rem;
+    margin-bottom: 1em;
 }
 
 .author {
-  text-decoration: none;
-  color: var(--white);
+    text-decoration: none;
+    color: var(--white);
 }
 
 @media only screen and (max-width: 500px) {
-  .award-img img {
-    display: none;
-  }
+    .award-img img {
+        display: none;
+    }
 
-  footer .copy {
-    font-size: 2rem;
-  }
+    footer .copy {
+        font-size: 2rem;
+    }
 
-  .copy-social a {
-    margin: 0 .75em;
-  }
+    .copy-social a {
+        margin: 0 0.75em;
+    }
 
-  .copy-social a img {
-    transform: scale(1.2);
-  }
+    .copy-social a img {
+        transform: scale(1.2);
+    }
 
-  .copy-social a img:hover {
-    transform: scale(1.2);
-  }
+    .copy-social a img:hover {
+        transform: scale(1.2);
+    }
 }
